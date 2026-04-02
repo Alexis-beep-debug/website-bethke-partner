@@ -1,0 +1,56 @@
+---
+interface Props {
+  activePage?: string;
+  variant?: 'default' | 'minimal';
+}
+
+const { activePage = '', variant = 'default' } = Astro.props;
+---
+
+<nav id="nav">
+  <a href="/" class="nav-logo">Bethke <span>& Partner</span></a>
+  {variant === 'default' ? (
+    <ul class="nav-links">
+      <li><a href="/#leistungen" class={activePage === 'leistungen' ? 'active' : ''}>Leistungen</a></li>
+      <li><a href="/#prozess" class={activePage === 'prozess' ? 'active' : ''}>Ablauf</a></li>
+      <li><a href="/fallstudien" class={activePage === 'fallstudien' ? 'active' : ''}>Fallstudien</a></li>
+      <li><a href="/blog" class={activePage === 'blog' ? 'active' : ''}>Insights</a></li>
+      <li><a href="https://calendar.app.google/9B63foKnMQroLAKM9" target="_blank" rel="noopener" class:list={['btn-nav', { active: activePage === 'kontakt' }]}>Erstgespräch</a></li>
+    </ul>
+  ) : (
+    <a href="https://calendar.app.google/9B63foKnMQroLAKM9" target="_blank" rel="noopener" class="btn-nav">Erstgespräch</a>
+  )}
+  <button class="nav-burger" id="burger" onclick="toggleMob()" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="/#leistungen" onclick="toggleMob()">Leistungen</a>
+  <a href="/#prozess" onclick="toggleMob()">Ablauf</a>
+  <a href="/fallstudien" onclick="toggleMob()">Fallstudien</a>
+  <a href="/blog" onclick="toggleMob()">Insights</a>
+  <a href="https://calendar.app.google/9B63foKnMQroLAKM9" target="_blank" rel="noopener" class="mob-cta" onclick="toggleMob()">Erstgespräch vereinbaren</a>
+</div>
+
+<script is:inline>
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('nav');
+    if (nav) nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  function toggleMob() {
+    const menu = document.getElementById('mobMenu');
+    const burger = document.getElementById('burger');
+    if (!menu || !burger) return;
+    const isOpen = menu.classList.toggle('open');
+    const spans = burger.querySelectorAll('span');
+    if (isOpen) {
+      spans[0].style.cssText = 'transform: translateY(6.5px) rotate(45deg)';
+      spans[1].style.cssText = 'opacity: 0; transform: scaleX(0)';
+      spans[2].style.cssText = 'transform: translateY(-6.5px) rotate(-45deg)';
+    } else {
+      spans.forEach(s => s.style.cssText = '');
+    }
+  }
+</script>

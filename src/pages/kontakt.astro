@@ -1,0 +1,432 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Erstgespräch anfragen | Bethke &amp; Partner"
+  description="Kostenloses Erstgespräch mit Bethke & Partner – B2B-Vertrieb für SaaS, IT und Agenturen. Hinterlassen Sie Ihre Kontaktdaten, wir melden uns innerhalb von 24 Stunden."
+  activePage="kontakt"
+>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <a href="index.html" class="page-back">← Zurück zur Startseite</a>
+      <span class="page-tag">Kostenloses Erstgespräch</span>
+      <h1 class="page-title">30 Minuten.<br><em>Klare Antworten.</em></h1>
+      <p class="page-sub">Kein Verkaufsgespräch. Wir analysieren gemeinsam, ob und wie externer B2B-Vertrieb für Ihr Unternehmen Sinn macht – und was realistische Ergebnisse wären.</p>
+    </div>
+    <div class="hero-expect">
+      <div class="hero-expect-label">Was Sie erwartet</div>
+      <div class="expect-item">
+        <div class="expect-num">01</div>
+        <div class="expect-text">
+          <strong>Analyse Ihrer Situation</strong>
+          Wo stehen Sie gerade im Vertrieb – und was ist das konkrete Ziel?
+        </div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-num">02</div>
+        <div class="expect-text">
+          <strong>Fit-Check</strong>
+          Ehrliche Einschätzung, ob unser Modell zu Ihrer Branche und Ihrem Produkt passt.
+        </div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-num">03</div>
+        <div class="expect-text">
+          <strong>Nächste Schritte</strong>
+          Konkreter Vorschlag, wie ein Projekt aussehen könnte – inklusive Zeitplan und Kosten.
+        </div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-num">04</div>
+        <div class="expect-text">
+          <strong>Kein Druck</strong>
+          Sie entscheiden im Anschluss in Ruhe. Wir drängen nicht.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FORM + SIDEBAR -->
+<div class="form-wrap">
+
+  <!-- FORM -->
+  <div class="form-card">
+    <h2 class="form-card-title">Ihre Anfrage</h2>
+    <p class="form-card-sub">Wir melden uns innerhalb von 24 Stunden telefonisch bei Ihnen – um zu verstehen, was Ihr Ziel ist, bevor wir einen Termin vereinbaren.</p>
+
+    <!-- Netlify Form - data-netlify="true" makes it work automatically on Netlify -->
+    <form
+      id="contactForm"
+      name="erstgespraech"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      novalidate
+    >
+      <!-- Netlify hidden fields -->
+      <input type="hidden" name="form-name" value="erstgespraech">
+      <input type="hidden" name="bot-field" style="display:none">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="vorname" class="form-label">Vorname <span class="req">*</span></label>
+          <input type="text" id="vorname" name="vorname" class="form-input" placeholder="Max" required autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label for="nachname" class="form-label">Nachname <span class="req">*</span></label>
+          <input type="text" id="nachname" name="nachname" class="form-input" placeholder="Mustermann" required autocomplete="family-name">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="unternehmen" class="form-label">Unternehmen</label>
+        <input type="text" id="unternehmen" name="unternehmen" class="form-input" placeholder="Mustermann GmbH" autocomplete="organization">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email" class="form-label">E-Mail-Adresse <span class="req">*</span></label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="max@firma.de" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="telefon" class="form-label">Telefon <span class="req">*</span></label>
+          <input type="tel" id="telefon" name="telefon" class="form-input" placeholder="+49 176 ..." required autocomplete="tel">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="branche" class="form-label">Ihre Branche</label>
+        <select id="branche" name="branche" class="form-select">
+          <option value="" disabled selected>Bitte auswählen …</option>
+          <option value="saas">SaaS / Software</option>
+          <option value="it">IT-Dienstleistung / Consulting</option>
+          <option value="agentur">Marketing- / Kreativagentur</option>
+          <option value="sonstige">Sonstige B2B-Dienstleistung</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="nachricht" class="form-label">Kurze Beschreibung Ihres Anliegens</label>
+        <textarea id="nachricht" name="nachricht" class="form-textarea" placeholder="Was ist Ihre aktuelle Vertriebssituation? Welches Ziel haben Sie? (Optional – wir können das auch im Telefonat klären.)"></textarea>
+      </div>
+
+      <p class="form-privacy">
+        Mit dem Absenden stimmen Sie zu, dass Ihre Daten zur Bearbeitung Ihrer Anfrage verwendet werden. Details in unserer <a href="datenschutz.html">Datenschutzerklärung</a>. Keine Weitergabe an Dritte, kein Newsletter.
+      </p>
+
+      <button type="submit" class="form-submit">
+        Anfrage absenden
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 8h10M9 4l4 4-4 4"/>
+        </svg>
+      </button>
+    </form>
+
+    <!-- Success message (shown after Netlify redirect or JS submit) -->
+    <div class="form-success" id="formSuccess">
+      <div class="success-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <path d="M5 12l5 5L20 7"/>
+        </svg>
+      </div>
+      <h3 class="success-title">Nachricht erhalten.</h3>
+      <p class="success-body">Vielen Dank – wir melden uns innerhalb von 24 Stunden telefonisch bei Ihnen. Bis bald.</p>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="contact-sidebar">
+    <div class="sidebar-block">
+      <div class="sidebar-block-label">Ihr Ansprechpartner</div>
+      <div class="contact-card">
+        <div class="contact-person-name">Alexis Bethke-Pittadakis</div>
+        <div class="contact-person-title">Geschäftsführer · Business Development</div>
+        <div class="contact-info-row">
+          <svg class="contact-info-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M2 2.5A1.5 1.5 0 013.5 1h7A1.5 1.5 0 0112 2.5v9a1.5 1.5 0 01-1.5 1.5h-7A1.5 1.5 0 012 11.5v-9z"/>
+            <path d="M5 5.5h4M5 7.5h4M5 9.5h2"/>
+          </svg>
+          <a href="mailto:alexis@bethke-und-partner.de">alexis@bethke-und-partner.de</a>
+        </div>
+        <div class="contact-info-row">
+          <svg class="contact-info-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M2.5 2.5c.5-.5 1.3-.5 1.8 0l1.5 1.5c.5.5.5 1.3 0 1.8l-.7.7c.6 1 1.4 1.8 2.4 2.4l.7-.7c.5-.5 1.3-.5 1.8 0l1.5 1.5c.5.5.5 1.3 0 1.8C10 12.5 7 13.5 2.5 9S1.5 4 2.5 2.5z"/>
+          </svg>
+          <a href="tel:+4917675726791">+49 176 757 267 91</a>
+        </div>
+        <div class="contact-info-row">
+          <svg class="contact-info-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.3">
+            <circle cx="7" cy="7" r="5.5"/>
+            <path d="M7 4v3.2l2 1.3"/>
+          </svg>
+          Mo – Fr, 09:00 – 18:00 Uhr
+        </div>
+        <div class="contact-info-row">
+          <svg class="contact-info-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M7 1.5C4.5 1.5 2.5 3.5 2.5 6c0 3.2 4.5 6.5 4.5 6.5s4.5-3.3 4.5-6.5c0-2.5-2-4.5-4.5-4.5z"/>
+            <circle cx="7" cy="6" r="1.2"/>
+          </svg>
+          Nürnberg · Bayern
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-block-label">Unser Versprechen</div>
+      <div class="promise-card">
+        <div class="promise-title">Was Sie von uns erwarten können</div>
+        <div class="promise-item">
+          <span class="promise-check">✓</span>
+          <span>Rückmeldung innerhalb von 24 Stunden – werktags</span>
+        </div>
+        <div class="promise-item">
+          <span class="promise-check">✓</span>
+          <span>Kein Verkaufsdruck – wir prüfen gemeinsam den Fit</span>
+        </div>
+        <div class="promise-item">
+          <span class="promise-check">✓</span>
+          <span>Konkrete Einschätzung statt vager Versprechen</span>
+        </div>
+        <div class="promise-item">
+          <span class="promise-check">✓</span>
+          <span>Transparente Preise von Anfang an</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+</BaseLayout>
+
+<style>
+/* ── HERO ── */
+.page-hero {
+  background: var(--navy);
+  padding: 120px 40px 72px;
+}
+.page-hero-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
+.page-back {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--slate-2); text-decoration: none; margin-bottom: 32px; transition: color .2s;
+}
+.page-back:hover { color: var(--white); }
+.page-tag { font-size: 10px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 16px; display: block; }
+.page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 58px); font-weight: 300;
+  color: var(--white); line-height: 1.06; letter-spacing: -.02em;
+  margin-bottom: 24px;
+}
+.page-title em { color: var(--slate-2); }
+.page-sub { font-size: 15px; color: var(--slate); line-height: 1.7; max-width: 440px; }
+
+/* Hero right: what to expect */
+.hero-expect-label { font-size: 10px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--slate); margin-bottom: 20px; }
+.expect-item {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 16px 0; border-bottom: 1px solid rgba(107,133,160,0.2);
+}
+.expect-item:last-child { border-bottom: none; }
+.expect-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 300; color: var(--blue-mid);
+  min-width: 28px; line-height: 1;
+}
+.expect-text { font-size: 13px; color: var(--slate-2); line-height: 1.6; }
+.expect-text strong { color: var(--white); font-weight: 500; display: block; margin-bottom: 2px; font-size: 14px; }
+
+/* ── FORM SECTION ── */
+.form-wrap {
+  max-width: 1060px; margin: 0 auto;
+  padding: 72px 40px 100px;
+  display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: start;
+}
+
+/* Form card */
+.form-card {
+  background: var(--white); border: 1px solid var(--border);
+  padding: 48px;
+}
+.form-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px; font-weight: 300; color: var(--navy);
+  margin-bottom: 8px; letter-spacing: -.01em;
+}
+.form-card-sub { font-size: 13px; color: var(--text-2); margin-bottom: 36px; }
+
+/* Form fields */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-group { margin-bottom: 20px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-label {
+  display: block; font-size: 11px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--slate); margin-bottom: 8px;
+}
+.form-label .req { color: var(--blue-mid); margin-left: 2px; }
+.form-input, .form-select, .form-textarea {
+  width: 100%; padding: 13px 16px;
+  background: var(--bg); border: 1px solid var(--border-2);
+  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300;
+  color: var(--text); outline: none;
+  transition: border-color .2s, background .2s;
+  -webkit-appearance: none; border-radius: 0;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--blue); background: var(--white);
+}
+.form-input::placeholder, .form-textarea::placeholder { color: var(--muted); }
+.form-select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B85A0' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+.form-select option { color: var(--text); }
+.form-textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+
+/* Privacy note */
+.form-privacy {
+  font-size: 12px; color: var(--muted); margin: 24px 0 28px;
+  line-height: 1.6;
+}
+.form-privacy a { color: var(--slate); text-decoration: underline; }
+
+/* Submit button */
+.form-submit {
+  width: 100%; padding: 16px 32px;
+  background: var(--navy); color: var(--white);
+  font-family: 'DM Sans', sans-serif; font-size: 12px;
+  font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  border: none; cursor: pointer;
+  transition: background .2s;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.form-submit:hover { background: var(--blue); }
+.form-submit svg { transition: transform .2s; }
+.form-submit:hover svg { transform: translateX(3px); }
+
+/* ── SIDEBAR ── */
+.sidebar-block {
+  margin-bottom: 24px;
+}
+.sidebar-block-label {
+  font-size: 10px; font-weight: 500; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--slate); margin-bottom: 16px;
+}
+.contact-card {
+  background: var(--navy); padding: 28px 24px;
+}
+.contact-person-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 300; color: var(--white);
+  margin-bottom: 4px;
+}
+.contact-person-title { font-size: 12px; color: var(--slate); margin-bottom: 20px; }
+.contact-info-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 0; border-bottom: 1px solid rgba(107,133,160,0.2);
+  font-size: 13px; color: var(--slate-2);
+}
+.contact-info-row:last-child { border-bottom: none; }
+.contact-info-row a { color: var(--slate-2); text-decoration: none; transition: color .2s; }
+.contact-info-row a:hover { color: var(--white); }
+.contact-info-icon { color: var(--slate); flex-shrink: 0; }
+
+.promise-card {
+  background: var(--bg-2); border: 1px solid var(--border);
+  padding: 24px;
+}
+.promise-title { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 12px; }
+.promise-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; color: var(--text-2); line-height: 1.5;
+  margin-bottom: 10px;
+}
+.promise-item:last-child { margin-bottom: 0; }
+.promise-check { color: var(--blue); font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+/* ── SUCCESS STATE ── */
+.form-success {
+  display: none; text-align: center; padding: 48px 32px;
+}
+.form-success.visible { display: block; }
+.success-icon {
+  width: 56px; height: 56px; background: var(--blue);
+  margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;
+}
+.success-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 300; color: var(--navy);
+  margin-bottom: 12px;
+}
+.success-body { font-size: 14px; color: var(--text-2); line-height: 1.7; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .page-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .form-wrap { grid-template-columns: 1fr; gap: 48px; }
+  .contact-sidebar { display: flex; gap: 20px; flex-wrap: wrap; }
+  .contact-card, .promise-card { flex: 1; min-width: 240px; }
+}
+@media (max-width: 768px) {
+  .page-hero { padding: 100px 24px 56px; }
+  .form-wrap { padding: 48px 24px 72px; }
+  .form-card { padding: 28px 24px; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+
+<script is:inline>
+// Show success message if Netlify redirects back with ?success=true
+if (window.location.search.includes('success=true')) {
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').classList.add('visible');
+}
+
+// Optional: JS submit for smoother UX (still works without JS via Netlify's native form handling)
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // Basic validation
+    const required = form.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(field => {
+      if (!field.value.trim()) {
+        field.style.borderColor = 'var(--error)';
+        valid = false;
+      } else {
+        field.style.borderColor = '';
+      }
+    });
+    if (!valid) return;
+
+    // Encode form data for Netlify
+    const data = new FormData(form);
+    const body = new URLSearchParams(data).toString();
+
+    try {
+      const btn = form.querySelector('.form-submit');
+      btn.textContent = 'Wird gesendet …';
+      btn.disabled = true;
+
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body
+      });
+
+      // Show success
+      form.style.display = 'none';
+      document.getElementById('formSuccess').classList.add('visible');
+    } catch (err) {
+      // Fallback: submit the form normally
+      form.submit();
+    }
+  });
+}
+</script>
