@@ -1,0 +1,376 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "https://www.bethke-und-partner.de/blog",
+  "url": "https://www.bethke-und-partner.de/blog",
+  "name": "Insights & Vertriebswissen",
+  "description": "Praxiswissen zu B2B-Vertrieb, Kaltakquise und Systematik von Bethke & Partner.",
+  "inLanguage": "de-DE",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bethke & Partner",
+    "url": "https://www.bethke-und-partner.de"
+  }
+};
+---
+
+<BaseLayout
+  title="Insights & Vertriebswissen – B2B Praxistipps | Bethke & Partner"
+  description="Standpunkte und Praxiswissen zu B2B-Vertrieb, Kaltakquise und Systematik. Warum SDR-Aufbau scheitert, wie ICP-Definition funktioniert und was in der Kaltakquise 2026 wirklich zählt."
+  activePage="blog"
+  structuredData={structuredData}
+>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="ph-left">
+      <div class="ph-label">Insights & Standpunkte</div>
+      <h1 class="ph-h1">Vertrieb,<br>der <em>funktioniert.</em></h1>
+      <p class="ph-sub">Keine generischen Tipps. Standpunkte aus der Praxis – zu B2B-Vertrieb, Systematik und dem, was Agenturen, SaaS-Unternehmen und Dienstleister wirklich weiterbringt.</p>
+    </div>
+    <div class="ph-right">
+      <div class="ph-statement">
+        <p class="ph-statement-text">„Vertrieb scheitert selten an den falschen Menschen. Meistens scheitert er an fehlenden Systemen."</p>
+        <p class="ph-statement-sub">Alexis Bethke-Pittadakis · Bethke & Partner</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED ARTICLE -->
+<div class="featured-section">
+  <div class="featured-inner">
+    <div class="featured-label r">Neuester Artikel</div>
+    <div class="featured-card r">
+      <div class="featured-left">
+        <div class="feat-tag"><span class="feat-tag-dot"></span> Vertriebsstrategie</div>
+        <div class="feat-num">01</div>
+        <h2 class="feat-title">
+          Warum der interne SDR-Aufbau<br>
+          <em>meistens scheitert –</em><br>
+          und was stattdessen funktioniert.
+        </h2>
+        <p class="feat-excerpt">
+          Die Idee klingt einleuchtend: Stell einen eigenen Sales Development Representative ein, der täglich Leads generiert. In der Praxis scheitern die meisten dieser Versuche – und zwar nicht wegen der falschen Person, sondern wegen des fehlenden Systems dahinter.
+        </p>
+        <a href="/blog/sdr-aufbau" class="feat-link">Artikel lesen →</a>
+      </div>
+      <div class="featured-right">
+        <div>
+          <div class="feat-meta-row">
+            <div class="feat-meta-item">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="6.5" cy="6.5" r="5.5"/><path d="M6.5 3.5v3l2 1.5"/></svg>
+              ca. 8 Min. Lesezeit
+            </div>
+            <div class="feat-meta-item">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1.5" y="2" width="10" height="9" rx="1"/><path d="M1.5 5h10M4 1v2M9 1v2"/></svg>
+              Februar 2026
+            </div>
+          </div>
+          <ul class="feat-key-points">
+            <li class="feat-key-point">
+              <span class="feat-kp-num">01</span>
+              <span>Das verbreitete Missverständnis: Warum Unternehmen die richtige Person suchen, bevor sie den richtigen Prozess haben.</span>
+            </li>
+            <li class="feat-key-point">
+              <span class="feat-kp-num">02</span>
+              <span>Was tatsächlich schiefläuft – die vier häufigsten Muster, die zu Fluktuation und schwankender Performance führen.</span>
+            </li>
+            <li class="feat-key-point">
+              <span class="feat-kp-num">03</span>
+              <span>Die Grundvoraussetzungen, die vor dem ersten externen Vertriebler vorhanden sein müssen – und wie man sie aufbaut.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OTHER ARTICLES -->
+<div class="other-section">
+  <div class="other-inner">
+    <div class="sec-label r">Weitere Themen</div>
+    <h2 class="sec-h r">Was als <em>Nächstes</em> erscheint.</h2>
+    <div class="articles-grid">
+      <div class="art-card r d1">
+        <div class="art-card-meta">
+          <span class="art-tag-small">Software-Vertrieb</span>
+          <span class="art-card-num">— 02</span>
+        </div>
+        <h3 class="art-card-title">Software-Vertrieb ist kein<br><em>normaler Vertrieb –</em><br>und das hat Konsequenzen.</h3>
+        <p class="art-card-excerpt">SaaS- und IT-Produkte verkaufen sich nach anderen Regeln. Längere Zyklen, komplexere Entscheiderstrukturen, ein Nutzenversprechen, das man nicht anfassen kann. Was das konkret bedeutet – und worauf es beim Outbound in diesem Umfeld ankommt.</p>
+        <div class="art-card-bottom">
+          <span class="art-soon-badge" style="color: var(--blue-mid); border-color: rgba(43,91,168,0.35); background: rgba(43,91,168,0.06);">Erscheint im März</span>
+          <span class="art-read-time">ca. 10 Min.</span>
+        </div>
+      </div>
+      <div class="art-card r d2">
+        <div class="art-card-meta">
+          <span class="art-tag-small">ICP & Zielgruppe</span>
+          <span class="art-card-num">— 03</span>
+        </div>
+        <h3 class="art-card-title">Die meisten B2B-Unternehmen sprechen<br>die <em>falsche Zielgruppe</em> an.</h3>
+        <p class="art-card-excerpt">Ein Ideal Customer Profile ist keine demografische Beschreibung. Es ist eine präzise Hypothese darüber, wer wirklich kauft, warum – und was den Unterschied zwischen Ihren besten Kunden und dem Rest ausmacht.</p>
+        <div class="art-card-bottom">
+          <span class="art-soon-badge">Erscheint bald</span>
+          <span class="art-read-time">ca. 9 Min.</span>
+        </div>
+      </div>
+      <div class="art-card r d3">
+        <div class="art-card-meta">
+          <span class="art-tag-small">Kaltakquise</span>
+          <span class="art-card-num">— 04</span>
+        </div>
+        <h3 class="art-card-title">Kaltakquise 2026: Was funktioniert,<br><em>was nicht</em> – und warum.</h3>
+        <p class="art-card-excerpt">„Kaltakquise funktioniert nicht mehr" ist eine der meistgehörten Aussagen im B2B-Vertrieb – und eine der ungenauesten. Strukturierte Kaltakquise mit klarer Positionierung funktioniert heute genauso wie früher. Der Unterschied liegt im System.</p>
+        <div class="art-card-bottom">
+          <span class="art-soon-badge">Erscheint bald</span>
+          <span class="art-read-time">ca. 7 Min.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPICS BAND -->
+<div class="topics-band r">
+  <div class="topics-inner">
+    <div class="topics-left">
+      Themen, die uns <em>beschäftigen.</em>
+      <p>Vertrieb, Systematik, ICP-Schärfung, Skalierung – aus der täglichen Praxis mit SaaS-Unternehmen, IT-Unternehmen und Agenturen.</p>
+    </div>
+    <div class="topics-list">
+      <div class="topic-item">
+        <div class="topic-item-left">
+          <span class="topic-num">01</span>
+          <span class="topic-title">Warum interner SDR-Aufbau meistens scheitert</span>
+        </div>
+        <span class="topic-badge" style="color: #2B5BA8; border-color: rgba(43,91,168,0.4);">Online</span>
+      </div>
+      <div class="topic-item">
+        <div class="topic-item-left">
+          <span class="topic-num">02</span>
+          <span class="topic-title">Software-Vertrieb vs. klassischer Vertrieb – was wirklich anders ist</span>
+        </div>
+        <span class="topic-badge">März 2026</span>
+      </div>
+      <div class="topic-item">
+        <div class="topic-item-left">
+          <span class="topic-num">03</span>
+          <span class="topic-title">ICP-Definition: Die falsche Zielgruppe ansprechen</span>
+        </div>
+        <span class="topic-badge">Bald verfügbar</span>
+      </div>
+      <div class="topic-item">
+        <div class="topic-item-left">
+          <span class="topic-num">04</span>
+          <span class="topic-title">Kaltakquise 2026 – was funktioniert, was nicht</span>
+        </div>
+        <span class="topic-badge">Bald verfügbar</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-strip r">
+  <div class="cta-inner">
+    <h2 class="cta-h">Lieber direkt<br><em>ins Gespräch?</em></h2>
+    <p class="cta-sub">Die Themen in unseren Artikeln beschäftigen viele unserer Kunden. Wenn Sie nicht warten möchten – sprechen Sie uns einfach an.</p>
+    <div class="cta-btns">
+      <a href="https://calendar.app.google/9B63foKnMQroLAKM9" target="_blank" rel="noopener" class="btn-primary">Kostenloses Erstgespräch</a>
+      <a href="/" class="btn-ghost">Zurück zur Website</a>
+    </div>
+  </div>
+</div>
+
+</BaseLayout>
+
+<style>
+/* ── PAGE HEADER ── */
+.page-header {
+  padding: 64px 64px 0;
+  position: relative; overflow: hidden;
+  background: var(--bg);
+}
+.page-header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(107,133,160,0.22) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+}
+.page-header::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 100% 0%, rgba(242,245,248,0) 0%, var(--bg) 70%);
+  pointer-events: none;
+}
+.page-header-inner {
+  max-width: 1100px; margin: 0 auto;
+  padding: 80px 0 100px;
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+.ph-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--slate); margin-bottom: 28px;
+  opacity: 0; animation: fadeUp 0.7s 0.1s cubic-bezier(.16,1,.3,1) forwards;
+}
+.ph-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--slate-2); }
+.ph-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 5.5vw, 72px);
+  font-weight: 300; line-height: 1.02;
+  letter-spacing: -0.01em; color: var(--navy);
+  margin-bottom: 24px;
+  opacity: 0; animation: fadeUp 0.8s 0.2s cubic-bezier(.16,1,.3,1) forwards;
+}
+.ph-h1 em { font-style: italic; color: var(--blue); }
+.ph-sub {
+  font-size: 16px; color: var(--text-2);
+  line-height: 1.8; font-weight: 300; max-width: 440px;
+  opacity: 0; animation: fadeUp 0.8s 0.35s cubic-bezier(.16,1,.3,1) forwards;
+}
+.ph-right {
+  opacity: 0; animation: fadeUp 0.8s 0.45s cubic-bezier(.16,1,.3,1) forwards;
+  padding-bottom: 8px;
+}
+.ph-statement { border-left: 2px solid var(--blue); padding: 4px 0 4px 28px; }
+.ph-statement-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 300; font-style: italic;
+  color: var(--navy); line-height: 1.35;
+  letter-spacing: -0.005em; margin-bottom: 16px;
+}
+.ph-statement-sub { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ── FEATURED ARTICLE ── */
+.featured-section { background: var(--white); border-top: 1px solid var(--border); padding: 80px 64px; }
+.featured-inner { max-width: 1100px; margin: 0 auto; }
+.featured-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--slate); margin-bottom: 36px;
+}
+.featured-label::after { content: ''; width: 32px; height: 1px; background: var(--border-2); }
+.featured-card { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.featured-left {
+  background: var(--navy); padding: 60px 56px;
+  position: relative; overflow: hidden;
+}
+.featured-left::before {
+  content: ''; position: absolute; bottom: -60px; right: -60px;
+  width: 260px; height: 260px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(33,85,163,0.25) 0%, transparent 65%);
+  pointer-events: none;
+}
+.feat-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--slate-2); margin-bottom: 28px; }
+.feat-tag-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--blue-mid); }
+.feat-num { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; color: rgba(255,255,255,0.06); line-height: 1; margin-bottom: -16px; letter-spacing: -0.04em; }
+.feat-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3vw, 38px); font-weight: 300; line-height: 1.15; color: var(--white); letter-spacing: -0.01em; margin-bottom: 20px; }
+.feat-title em { font-style: italic; color: var(--slate-2); }
+.feat-excerpt { font-size: 14.5px; color: rgba(242,245,248,0.5); line-height: 1.8; font-weight: 300; margin-bottom: 40px; }
+.feat-link { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-2); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 4px; transition: color 0.2s, border-color 0.2s; }
+.feat-link:hover { color: var(--white); border-color: var(--white); }
+.featured-right { background: var(--bg); padding: 60px 48px; display: flex; flex-direction: column; justify-content: space-between; }
+.feat-meta-row { display: flex; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
+.feat-meta-item { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.feat-meta-item svg { opacity: 0.4; }
+.feat-key-points { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 40px; }
+.feat-key-point { display: flex; gap: 16px; font-size: 14px; color: var(--text-2); line-height: 1.65; align-items: flex-start; }
+.feat-kp-num { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; color: var(--slate-2); flex-shrink: 0; width: 28px; line-height: 1.4; }
+
+/* ── OTHER ARTICLES ── */
+.other-section { padding: 80px 64px; background: var(--bg); }
+.other-inner { max-width: 1100px; margin: 0 auto; }
+.sec-label { display: inline-flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--slate); margin-bottom: 20px; }
+.sec-label::after { content: ''; width: 32px; height: 1px; background: var(--border-2); }
+.sec-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 3.5vw, 46px); font-weight: 300; letter-spacing: -0.005em; line-height: 1.1; color: var(--navy); margin-bottom: 48px; }
+.sec-h em { font-style: italic; color: var(--blue); }
+.articles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.art-card { background: var(--white); padding: 48px 44px; display: flex; flex-direction: column; transition: background 0.25s; position: relative; overflow: hidden; }
+.art-card:hover { background: var(--bg); }
+.art-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--blue); transform: scaleX(0); transform-origin: left; transition: transform 0.4s cubic-bezier(.16,1,.3,1); }
+.art-card:hover::before { transform: scaleX(1); }
+.art-card-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+.art-tag-small { font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-mid); background: rgba(28,67,128,0.07); border: 1px solid rgba(28,67,128,0.15); padding: 3px 10px; }
+.art-card-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; font-weight: 300; color: var(--slate-3); }
+.art-card-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 2.2vw, 30px); font-weight: 300; line-height: 1.2; color: var(--navy); letter-spacing: -0.01em; margin-bottom: 16px; }
+.art-card-title em { font-style: italic; color: var(--blue); }
+.art-card-excerpt { font-size: 14px; color: var(--text-2); line-height: 1.8; flex: 1; font-weight: 300; margin-bottom: 32px; }
+.art-card-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; border-top: 1px solid var(--border); }
+.art-soon-badge { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); background: var(--bg-2); border: 1px solid var(--border-2); padding: 5px 12px; }
+.art-read-time { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+
+/* ── TOPICS BAND ── */
+.topics-band { background: var(--navy); padding: 60px 64px; }
+.topics-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: center; }
+.topics-left { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3vw, 38px); font-weight: 300; line-height: 1.2; color: var(--white); letter-spacing: -0.01em; }
+.topics-left em { font-style: italic; color: var(--slate-2); }
+.topics-left p { font-family: 'DM Sans', sans-serif; font-size: 14px; color: rgba(242,245,248,0.45); line-height: 1.7; margin-top: 14px; font-weight: 300; }
+.topics-list { display: flex; flex-direction: column; gap: 1px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.06); }
+.topic-item { background: rgba(255,255,255,0.02); padding: 20px 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; transition: background 0.25s; }
+.topic-item:hover { background: rgba(255,255,255,0.05); }
+.topic-item-left { display: flex; align-items: center; gap: 20px; }
+.topic-num { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 300; color: rgba(242,245,248,0.2); flex-shrink: 0; }
+.topic-title { font-size: 15px; font-weight: 400; color: rgba(242,245,248,0.7); line-height: 1.4; }
+.topic-badge { font-size: 9px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--slate-2); border: 1px solid rgba(107,133,160,0.25); padding: 4px 10px; white-space: nowrap; }
+
+/* ── CTA ── */
+.cta-strip { background: var(--bg-2); border-top: 1px solid var(--border); padding: 80px 64px; text-align: center; }
+.cta-inner { max-width: 580px; margin: 0 auto; }
+.cta-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4vw, 48px); font-weight: 300; color: var(--navy); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 16px; }
+.cta-h em { font-style: italic; color: var(--blue); }
+.cta-sub { font-size: 15px; color: var(--text-2); line-height: 1.75; margin-bottom: 36px; }
+.cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.btn-ghost { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-2); text-decoration: none; border-bottom: 1px solid var(--border-2); padding-bottom: 2px; transition: color 0.2s; }
+.btn-ghost:hover { color: var(--navy); }
+
+/* Delays */
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.3s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .page-header, .featured-section, .other-section, .topics-band, .cta-strip { padding-left: 40px; padding-right: 40px; }
+  .page-header-inner { grid-template-columns: 1fr; gap: 40px; }
+  .featured-card { grid-template-columns: 1fr; }
+  .articles-grid { grid-template-columns: 1fr; }
+  .topics-inner { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 768px) {
+  .page-header { padding: 60px 20px 0; }
+  .page-header-inner { padding: 56px 0 64px; }
+  .ph-h1 { font-size: 36px; }
+  .ph-sub { font-size: 14px; }
+  .ph-statement-text { font-size: 18px; }
+  .featured-section { padding: 56px 20px; }
+  .featured-left { padding: 40px 24px; }
+  .featured-right { padding: 36px 24px; }
+  .feat-num { font-size: 56px; }
+  .feat-title { font-size: 24px; }
+  .other-section { padding: 56px 20px; }
+  .sec-h { font-size: 28px; }
+  .art-card { padding: 36px 28px; }
+  .art-card-title { font-size: 22px; }
+  .topics-band { padding: 48px 20px; }
+  .topics-left { font-size: 24px; }
+  .topic-item { padding: 16px 20px; flex-wrap: wrap; gap: 8px; }
+  .cta-strip { padding: 56px 20px; }
+  .cta-btns { flex-direction: column; align-items: stretch; }
+}
+</style>
