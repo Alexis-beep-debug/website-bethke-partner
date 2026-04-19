@@ -117,6 +117,27 @@ const structuredData = {
         <div class="s-card-title">B2B Kundenrückgewinnung</div>
         <p class="s-card-body">In Ihrer CRM-Datenbank schlummern Kontakte, die einmal Interesse hatten – und heute vielleicht bereit sind. Wir reaktivieren diese Leads systematisch und holen Umsatz zurück, den Sie schon abgeschrieben hatten.</p>
       </div>
+      <a href="/outbound-agent" class="s-card s-card-link r d1">
+        <div class="s-card-bar"></div>
+        <div class="s-card-num">04</div>
+        <div class="s-card-title">Leadrecherche &amp; Anreicherung</div>
+        <p class="s-card-body">Wir finden und reichern Ihre Zielkontakte vollautomatisch an: Firmen-Daten, Entscheider, Mitarbeiterzahlen, Tech-Stack, aktuelle Signale. Frische, verifizierte Leads – ohne manuelle Recherche-Stunden.</p>
+        <span class="s-card-cta">Outbound Agent ansehen <span aria-hidden="true">→</span></span>
+      </a>
+      <a href="/outbound-agent" class="s-card s-card-link r d2">
+        <div class="s-card-bar"></div>
+        <div class="s-card-num">05</div>
+        <div class="s-card-title">Lead-Scoring &amp; Qualifizierung</div>
+        <p class="s-card-body">Jeder Lead wird einzeln nach Ihren Kriterien bewertet – Branche, Größe, Signale, Erreichbarkeit. Nur Kontakte mit echtem Fit landen in Ihrer Pipeline. Keine Massenmail an die falsche Zielgruppe.</p>
+        <span class="s-card-cta">Outbound Agent ansehen <span aria-hidden="true">→</span></span>
+      </a>
+      <a href="/outbound-agent" class="s-card s-card-link r d3">
+        <div class="s-card-bar"></div>
+        <div class="s-card-num">06</div>
+        <div class="s-card-title">Email Outbound Agent</div>
+        <p class="s-card-body">Personalisierte Cold-Email-Sequenzen, geschrieben auf Basis echter Informationen über jeden einzelnen Lead. Keine Templates, die nach Template klingen. Vollautonomer Versand mit messbaren Reply-Rates.</p>
+        <span class="s-card-cta">Outbound Agent ansehen <span aria-hidden="true">→</span></span>
+      </a>
     </div>
   </div>
 </section>
@@ -631,6 +652,27 @@ section.dark .sec-intro { color: var(--slate-2); }
   color: var(--text-2);
   line-height: 1.8;
 }
+
+a.s-card-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+a.s-card-link .s-card-body { flex: 1; margin-bottom: 24px; }
+.s-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-top: auto;
+  transition: gap 0.25s, color 0.25s;
+}
+a.s-card-link:hover .s-card-cta { gap: 14px; color: var(--navy); }
 
 /* ─── STATEMENT BAND ─── */
 .statement {

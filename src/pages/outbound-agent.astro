@@ -1,0 +1,678 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Outbound Agent für IT-Dienstleister",
+  "provider": {
+    "@type": "Organization",
+    "name": "Bethke & Partner",
+    "url": "https://www.bethke-und-partner.de"
+  },
+  "description": "Qualifizierte Leads und personalisierte Cold Emails — vollständig automatisiert. Kein SDR nötig. Setup in 48h.",
+  "areaServed": { "@type": "Country", "name": "DE" }
+};
+
+const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
+---
+
+<BaseLayout
+  title="Autonomer Outbound Agent für IT-Dienstleister | Bethke & Partner"
+  description="Qualifizierte Leads und personalisierte Cold Emails — vollständig automatisiert. Kein SDR nötig. Setup in 48h. Für IT-Dienstleister ab 20 Mitarbeitern."
+  activePage=""
+  structuredData={structuredData}
+>
+
+<!-- ═══ HERO ═══ -->
+<div class="oa-hero">
+  <div class="oa-hero-inner">
+    <div class="oa-hero-tag"><span class="oa-hero-tag-line"></span> Outbound Agent · IT-Dienstleister · SaaS</div>
+    <h1 class="oa-hero-h1">Neukunden.<br><em>Automatisch.</em></h1>
+    <p class="oa-hero-sub">Kein SDR. Kein manuelles Recherchieren. Kein leeres Postfach.<br>Unser Outbound Agent findet qualifizierte Leads, bewertet sie nach Ihren Kriterien und schreibt personalisierte Emails — vollständig autonom.</p>
+    <div class="oa-hero-actions">
+      <a href={calUrl} target="_blank" rel="noopener" class="btn-primary">Demo-Call buchen →</a>
+    </div>
+    <p class="oa-hero-note">Kostenlos. 30 Minuten. Keine Verpflichtung.</p>
+  </div>
+</div>
+
+<!-- ═══ PROBLEM ═══ -->
+<section class="alt">
+  <div class="oa-wrap">
+    <div class="oa-sec-header r">
+      <div class="oa-label"><span class="oa-label-line"></span> Das Problem</div>
+      <h2 class="oa-sec-h">Wie läuft Ihr Outbound <em>gerade?</em></h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card r">
+        <div class="pain-x">✕</div>
+        <h3 class="pain-title">Zu wenig Zeit</h3>
+        <p class="pain-body">Sie wissen, dass Outbound funktioniert. Aber wer soll die Leads recherchieren, qualifizieren und dann auch noch individuelle Emails schreiben? Ihr Team hat andere Prioritäten.</p>
+      </div>
+      <div class="pain-card r">
+        <div class="pain-x">✕</div>
+        <h3 class="pain-title">Zu teuer</h3>
+        <p class="pain-body">Ein guter SDR kostet €3.500–5.000 im Monat — und braucht trotzdem 3 Monate bis er produktiv ist. Für viele IT-Dienstleister rechnet sich das nicht.</p>
+      </div>
+      <div class="pain-card r">
+        <div class="pain-x">✕</div>
+        <h3 class="pain-title">Zu generisch</h3>
+        <p class="pain-body">Standard-Templates, gleiches Messaging für alle, niedrige Reply-Rates. Sie haben es probiert. Es hat nicht funktioniert.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LÖSUNG (4 Schritte) ═══ -->
+<section>
+  <div class="oa-wrap">
+    <div class="oa-sec-header r">
+      <div class="oa-label"><span class="oa-label-line"></span> So funktioniert es</div>
+      <h2 class="oa-sec-h">Ihr autonomer <em>Outbound-Kanal</em></h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card r">
+        <div class="step-num">01</div>
+        <h3 class="step-title">ICP definieren</h3>
+        <p class="step-body">Sie beschreiben einmal Ihren idealen Kunden. Branche, Mitarbeiterzahl, Region, Ausschlusskriterien. Das dauert 30 Minuten.</p>
+      </div>
+      <div class="step-card r">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Agent recherchiert</h3>
+        <p class="step-body">Unser System durchsucht selbstständig relevante Quellen, findet passende Firmen und extrahiert Kontaktdaten — ohne dass Sie einen Finger rühren.</p>
+      </div>
+      <div class="step-card r">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Agent qualifiziert</h3>
+        <p class="step-body">Jeder Lead wird einzeln bewertet. Passt er wirklich zu Ihnen? Ist der Entscheider erreichbar? Nur Leads mit hohem Score kommen weiter.</p>
+      </div>
+      <div class="step-card r">
+        <div class="step-num">04</div>
+        <h3 class="step-title">Agent schreibt &amp; versendet</h3>
+        <p class="step-body">Für jeden qualifizierten Lead wird eine individuelle Email geschrieben — basierend auf echten Informationen von der Firmenwebseite. Keine Templates, die nach Template klingen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ERGEBNISSE ═══ -->
+<section class="oa-dark">
+  <div class="oa-wrap">
+    <div class="oa-sec-header r">
+      <div class="oa-label oa-label-dark"><span class="oa-label-line"></span> Ergebnisse</div>
+      <h2 class="oa-sec-h" style="color:var(--white)">Was unsere Kunden <em>berichten</em></h2>
+    </div>
+    <div class="testimonials r">
+      <blockquote class="testi-card">
+        <p class="testi-text">„Wir haben vorher 6–8 Stunden pro Woche mit manueller Lead-Recherche verbracht. Das läuft jetzt vollständig automatisch. Die Reply-Rate liegt deutlich über unseren früheren Kampagnen."</p>
+        <cite class="testi-cite">— IT-Dienstleister, ~80 Mitarbeiter</cite>
+      </blockquote>
+      <blockquote class="testi-card">
+        <p class="testi-text">„Was mich überzeugt hat: Die Emails klingen nicht automatisiert. Die Leads fragen uns oft, wie wir von ihnen wissen. Das ist der Unterschied."</p>
+        <cite class="testi-cite">— IT-Dienstleister, ~40 Mitarbeiter</cite>
+      </blockquote>
+    </div>
+    <div class="kpi-row r">
+      <div class="kpi-item">
+        <div class="kpi-val">3.000</div>
+        <div class="kpi-label">Emails pro Monat<br>vollautomatisch</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-val">1.000</div>
+        <div class="kpi-label">qualifizierte Leads<br>monatlich recherchiert</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-val">&lt; 48h</div>
+        <div class="kpi-label">bis das System<br>läuft</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section class="alt">
+  <div class="oa-wrap">
+    <div class="oa-sec-header r">
+      <div class="oa-label"><span class="oa-label-line"></span> Investition</div>
+      <h2 class="oa-sec-h">Transparent. Fair. <em>Kalkulierbar.</em></h2>
+    </div>
+    <div class="pricing-layout r">
+      <div class="price-main">
+        <div class="price-row">
+          <div class="price-box">
+            <div class="price-tag">Setup</div>
+            <div class="price-amount">1.500 <sup>€</sup></div>
+            <div class="price-unit">einmalig</div>
+          </div>
+          <div class="price-box">
+            <div class="price-tag">Retainer</div>
+            <div class="price-amount">1.500 <sup>€</sup></div>
+            <div class="price-unit">pro Monat</div>
+          </div>
+        </div>
+        <ul class="incl-list">
+          <li>Einrichtung auf Ihren ICP</li>
+          <li>Monatlich 1.000 recherchierte + qualifizierte Leads</li>
+          <li>3.000 personalisierte Emails (3er-Sequenz)</li>
+          <li>Laufendes Monitoring und Optimierung</li>
+          <li>Monatliches Reporting</li>
+        </ul>
+      </div>
+    </div>
+    <div class="comp-wrap r">
+      <table class="oa-comp">
+        <thead>
+          <tr>
+            <th></th>
+            <th>SDR intern</th>
+            <th>Standard-Tool</th>
+            <th class="oa-comp-hl">Bethke &amp; Partner</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Kosten/Monat</td><td>€3.500–5.000</td><td>€500 + Aufwand</td><td class="oa-comp-hl"><strong>€1.500</strong></td></tr>
+          <tr><td>Setup-Zeit</td><td>3 Monate</td><td>Wochen</td><td class="oa-comp-hl"><strong>&lt; 48h</strong></td></tr>
+          <tr><td>Qualität</td><td>Abhängig von Person</td><td>Generisch</td><td class="oa-comp-hl"><strong>Individuell</strong></td></tr>
+          <tr><td>Skalierbar</td><td>Nein</td><td>Bedingt</td><td class="oa-comp-hl"><strong>Ja</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section>
+  <div class="oa-wrap">
+    <div class="oa-sec-header r">
+      <div class="oa-label"><span class="oa-label-line"></span> FAQ</div>
+      <h2 class="oa-sec-h">Häufige <em>Fragen</em></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item r">
+        <summary class="faq-q">Wie individuell sind die Emails wirklich?</summary>
+        <p class="faq-a">Jede Email wird basierend auf der echten Firmenwebseite des Leads geschrieben. Kein „Sehr geehrter Herr/Frau X, wir bieten...". Sondern konkreter Bezug auf das, was die Firma macht, welche Herausforderungen sie hat und warum wir relevant sind.</p>
+      </details>
+      <details class="faq-item r">
+        <summary class="faq-q">Was brauchen wir, um zu starten?</summary>
+        <p class="faq-a">Einen 30-minütigen Onboarding-Call, in dem wir Ihren ICP und Ihre Qualifizierungskriterien aufnehmen. Mehr nicht.</p>
+      </details>
+      <details class="faq-item r">
+        <summary class="faq-q">Können wir die Emails vorher prüfen?</summary>
+        <p class="faq-a">Ja. In den ersten zwei Wochen reviewen Sie jeden Batch bevor er versendet wird. Danach läuft es vollständig autonom — oder Sie behalten das Review, wie Sie möchten.</p>
+      </details>
+      <details class="faq-item r">
+        <summary class="faq-q">Was wenn ein Lead antwortet?</summary>
+        <p class="faq-a">Das System stoppt die Sequenz automatisch bei jeder Antwort. Sie bekommen eine Benachrichtigung und übernehmen das Gespräch manuell.</p>
+      </details>
+      <details class="faq-item r">
+        <summary class="faq-q">Für wen ist das nicht geeignet?</summary>
+        <p class="faq-a">Wenn Sie bereits ein funktionierendes SDR-Team haben, brauchen Sie uns nicht. Und wenn Ihr Angebot so komplex ist, dass jede Kontaktaufnahme einen stundenlangen manuellen Kontext braucht — dann ist Outbound generell schwierig, unabhängig von unserem System.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<div class="oa-cta">
+  <div class="oa-cta-inner r">
+    <div class="oa-label oa-label-dark" style="justify-content:center"><span class="oa-label-line"></span> Nächster Schritt</div>
+    <h2 class="oa-cta-h">Bereit für einen autonomen<br><em>Outbound-Kanal?</em></h2>
+    <p class="oa-cta-sub">Wir nehmen aktuell eine begrenzte Anzahl neuer Kunden an. Demo-Call buchen und schauen ob es passt.</p>
+    <a href={calUrl} target="_blank" rel="noopener" class="btn-primary-inv">Jetzt Demo-Call buchen →</a>
+    <p class="oa-cta-note">30 Minuten. Kostenlos. Unverbindlich.</p>
+  </div>
+</div>
+
+</BaseLayout>
+
+<style>
+/* ─── HERO ─── */
+.oa-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 64px 80px;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.oa-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(107,133,160,0.22) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+}
+.oa-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 0% 100%, rgba(242,245,248,0) 0%, var(--bg) 70%);
+  pointer-events: none;
+}
+.oa-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+.oa-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.1s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.oa-hero-tag-line {
+  display: block;
+  width: 28px; height: 1px;
+  background: var(--slate-2);
+}
+.oa-hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.2s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.oa-hero-h1 em { font-style: italic; color: var(--blue); }
+.oa-hero-sub {
+  max-width: 600px;
+  font-size: 17px;
+  color: var(--text-2);
+  line-height: 1.8;
+  margin-bottom: 48px;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.35s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.oa-hero-actions {
+  opacity: 0;
+  animation: fadeUp 0.9s 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.oa-hero-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 16px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.6s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+
+/* ─── SHARED ─── */
+.oa-wrap { max-width: 1100px; margin: 0 auto; }
+.oa-sec-header { margin-bottom: 56px; }
+.oa-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 20px;
+}
+.oa-label-dark { color: var(--slate-2); }
+.oa-label-line { display: block; width: 24px; height: 1px; background: var(--slate-3); }
+.oa-sec-h {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 300;
+  letter-spacing: -0.005em;
+  line-height: 1.08;
+  color: var(--navy);
+}
+.oa-sec-h em { font-style: italic; color: var(--blue); }
+
+/* ─── PAIN CARDS ─── */
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.pain-card {
+  background: var(--white);
+  padding: 48px 36px;
+}
+.pain-x {
+  font-size: 20px;
+  color: var(--error, #C0392B);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.pain-title {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+.pain-body {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.8;
+}
+
+/* ─── STEPS ─── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.step-card {
+  background: var(--bg);
+  padding: 44px 32px;
+  transition: background 0.3s;
+}
+.step-card:hover { background: var(--bg-2); }
+.step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 300;
+  color: rgba(107,133,160,0.2);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.step-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+.step-body {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.8;
+}
+
+/* ─── DARK SECTION ─── */
+.oa-dark {
+  background: var(--navy);
+  padding: 120px 64px;
+}
+
+/* ─── TESTIMONIALS ─── */
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(107,133,160,0.15);
+  border: 1px solid rgba(107,133,160,0.15);
+  margin-bottom: 48px;
+}
+.testi-card {
+  background: var(--bg-dark-2, #152236);
+  padding: 48px 40px;
+  margin: 0;
+}
+.testi-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--white);
+  font-style: italic;
+  margin-bottom: 24px;
+}
+.testi-cite {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--slate-2);
+  font-style: normal;
+}
+
+/* ─── KPIs ─── */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(107,133,160,0.15);
+  border: 1px solid rgba(107,133,160,0.15);
+}
+.kpi-item {
+  background: var(--bg-dark-2, #152236);
+  padding: 44px 36px;
+  text-align: center;
+}
+.kpi-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 54px;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.kpi-label {
+  font-size: 13px;
+  color: var(--slate-2);
+  line-height: 1.5;
+}
+
+/* ─── PRICING ─── */
+.pricing-layout { margin-bottom: 56px; }
+.price-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.price-box {
+  background: var(--white);
+  padding: 48px 40px;
+  text-align: center;
+}
+.price-tag {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.price-amount sup {
+  font-size: 22px;
+  vertical-align: super;
+  color: var(--slate);
+}
+.price-unit {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.incl-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.incl-list li {
+  font-size: 14.5px;
+  color: var(--text-2);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+}
+.incl-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--blue-mid);
+  font-weight: 500;
+}
+
+/* ─── COMPARISON TABLE ─── */
+.comp-wrap { overflow-x: auto; }
+.oa-comp {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+}
+.oa-comp th, .oa-comp td {
+  padding: 16px 24px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.oa-comp thead th {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  background: var(--white);
+}
+.oa-comp thead th:first-child {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  font-weight: 400;
+}
+.oa-comp tbody td { color: var(--text-2); background: var(--bg); }
+.oa-comp tbody td:first-child { color: var(--slate); font-size: 13px; }
+.oa-comp-hl {
+  background: rgba(28,67,128,0.05) !important;
+  border-left: 1px solid rgba(28,67,128,0.12);
+  color: var(--text) !important;
+}
+.oa-comp tbody tr:last-child td { border-bottom: none; }
+
+/* ─── FAQ ─── */
+.faq-list {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+.faq-q {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--navy);
+  padding: 24px 0;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-q::after {
+  content: '+';
+  font-size: 22px;
+  color: var(--slate);
+  font-weight: 300;
+  transition: transform 0.25s;
+}
+.faq-item[open] .faq-q::after {
+  content: '−';
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-a {
+  font-size: 14.5px;
+  color: var(--text-2);
+  line-height: 1.8;
+  padding: 0 0 24px;
+}
+
+/* ─── CTA ─── */
+.oa-cta {
+  background: var(--navy);
+  padding: 140px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.oa-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(107,133,160,0.1) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+}
+.oa-cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.oa-cta-h {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 5vw, 68px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 20px 0 24px;
+}
+.oa-cta-h em { font-style: italic; color: var(--slate-2); }
+.oa-cta-sub {
+  font-size: 16px;
+  color: var(--slate-2);
+  line-height: 1.8;
+  margin-bottom: 48px;
+}
+.oa-cta-note {
+  font-size: 13px;
+  color: var(--slate);
+  margin-top: 20px;
+}
+.btn-primary-inv {
+  display: inline-block;
+  background: var(--white);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.2s;
+}
+.btn-primary-inv:hover { background: var(--bg-2); transform: translateY(-2px); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .oa-hero { padding: 100px 40px 64px; }
+  .oa-dark { padding: 96px 40px; }
+  .oa-cta { padding: 96px 40px; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .oa-hero { padding: 80px 20px 48px; }
+  .oa-hero-h1 { font-size: 42px; }
+  .pain-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .testimonials { grid-template-columns: 1fr; }
+  .kpi-row { grid-template-columns: 1fr; }
+  .price-row { grid-template-columns: 1fr; }
+  .oa-dark { padding: 64px 20px; }
+  section { padding: 64px 20px; }
+  .oa-cta { padding: 64px 20px; }
+  .oa-comp { min-width: 500px; }
+}
+</style>
