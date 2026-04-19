@@ -73,6 +73,27 @@ const structuredData = {
       <a href="#leistungen" class="btn-text">Leistungen ansehen <span>→</span></a>
     </div>
   </div>
+  <div class="hero-skyline">
+    <svg viewBox="0 0 800 260" fill="none" xmlns="http://www.w3.org/2000/svg" class="skyline-svg">
+      <path d="
+        M0,250 L40,250 L40,200 L55,200 L55,180 L65,180 L65,200 L80,200 L80,250
+        L120,250 L120,210 L130,210 L130,190 L140,160 L150,190 L160,210 L170,210 L170,250
+        L200,250 L200,180 L210,180 L210,160 L215,130 L220,110 L225,130 L230,160 L240,160 L240,180 L250,180 L250,250
+        L280,250 L280,220 L290,220 L290,200 L300,200 L300,170 L305,140 L310,120 L315,100 L320,80 L325,100 L330,120 L335,140 L340,170 L340,200 L350,200 L350,220 L360,220 L360,250
+        L390,250 L390,190 L395,170 L400,150 L405,130 L410,110 L412,90 L414,70 L416,60 L418,70 L420,90 L422,110 L425,130 L430,150 L435,170 L440,190 L440,250
+        L470,250 L470,195 L480,195 L480,175 L485,155 L490,140 L495,155 L500,175 L510,175 L510,195 L520,195 L520,250
+        L550,250 L550,210 L560,210 L560,195 L570,195 L570,180 L580,180 L580,195 L590,195 L590,210 L600,210 L600,250
+        L630,250 L630,220 L640,220 L640,205 L645,190 L650,175 L655,190 L660,205 L670,205 L670,220 L680,220 L680,250
+        L710,250 L710,230 L720,230 L720,215 L730,215 L730,230 L740,230 L740,250
+        L800,250
+      " stroke="rgba(107,133,160,0.25)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="320" cy="76" r="3" fill="rgba(107,133,160,0.2)"/>
+      <circle cx="416" cy="56" r="3" fill="rgba(107,133,160,0.2)"/>
+      <line x1="320" y1="50" x2="320" y2="70" stroke="rgba(107,133,160,0.15)" stroke-width="0.8"/>
+      <line x1="416" y1="30" x2="416" y2="50" stroke="rgba(107,133,160,0.15)" stroke-width="0.8"/>
+      <line x1="413" y1="30" x2="419" y2="30" stroke="rgba(107,133,160,0.15)" stroke-width="0.8"/>
+    </svg>
+  </div>
   <div class="hero-stats">
     <div class="h-stat">
       <div class="h-stat-val">7 <em>Jahre</em></div>
@@ -327,6 +348,22 @@ const structuredData = {
   width: 100%;
   position: relative;
   z-index: 1;
+}
+
+.hero-skyline {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 55%;
+  max-width: 800px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: fadeUp 1.5s 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.skyline-svg {
+  width: 100%;
+  height: auto;
 }
 
 .hero-tag {
@@ -938,6 +975,7 @@ a.s-card-link:hover .s-card-cta { gap: 14px; color: var(--navy); }
 @media (max-width: 768px) {
   /* Hero */
   .hero-content { padding: 48px 20px 36px; }
+  .hero-skyline { display: none; }
   .hero-stats { padding: 0 20px; grid-template-columns: 1fr 1fr; }
   .hero-h1 { font-size: 38px; letter-spacing: -0.02em; }
   .hero-sub { font-size: 15px; }
