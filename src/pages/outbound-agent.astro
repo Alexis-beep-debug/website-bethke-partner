@@ -96,6 +96,108 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
   </div>
 </section>
 
+<!-- ═══ DASHBOARD ═══ -->
+<section class="dash-section">
+  <div class="oa-wrap">
+    <div class="oa-sec-header r">
+      <div class="oa-label oa-label-dark"><span class="oa-label-line"></span> Reporting</div>
+      <h2 class="oa-sec-h" style="color:var(--white)">So sieht Ihr Dashboard aus</h2>
+    </div>
+    <div class="dash-grid">
+      <div class="dash-card dash-card-wide r">
+        <div class="dash-card-header">
+          <span class="dash-card-title">Pipeline-Aktivität</span>
+          <span class="dash-card-period">Letzte 8 Wochen</span>
+        </div>
+        <div class="dash-chart" id="dashChart">
+          <svg viewBox="0 0 640 200" preserveAspectRatio="none" class="chart-svg">
+            <defs>
+              <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(43,91,168,0.3)"/>
+                <stop offset="100%" stop-color="rgba(43,91,168,0)"/>
+              </linearGradient>
+              <linearGradient id="grad2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(107,133,160,0.2)"/>
+                <stop offset="100%" stop-color="rgba(107,133,160,0)"/>
+              </linearGradient>
+            </defs>
+            <line x1="0" y1="50" x2="640" y2="50" stroke="rgba(107,133,160,0.08)" stroke-width="1"/>
+            <line x1="0" y1="100" x2="640" y2="100" stroke="rgba(107,133,160,0.08)" stroke-width="1"/>
+            <line x1="0" y1="150" x2="640" y2="150" stroke="rgba(107,133,160,0.08)" stroke-width="1"/>
+            <path class="chart-area chart-area-1" d="M0,180 L80,160 L160,140 L240,120 L320,90 L400,70 L480,50 L560,35 L640,20 L640,200 L0,200Z" fill="url(#grad1)"/>
+            <path class="chart-line chart-line-1" d="M0,180 L80,160 L160,140 L240,120 L320,90 L400,70 L480,50 L560,35 L640,20" fill="none" stroke="#2B5BA8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="chart-area chart-area-2" d="M0,190 L80,185 L160,178 L240,170 L320,155 L400,140 L480,125 L560,115 L640,105 L640,200 L0,200Z" fill="url(#grad2)"/>
+            <path class="chart-line chart-line-2" d="M0,190 L80,185 L160,178 L240,170 L320,155 L400,140 L480,125 L560,115 L640,105" fill="none" stroke="#6B85A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,6"/>
+          </svg>
+          <div class="chart-labels">
+            <span>Wo 1</span><span>Wo 2</span><span>Wo 3</span><span>Wo 4</span><span>Wo 5</span><span>Wo 6</span><span>Wo 7</span><span>Wo 8</span>
+          </div>
+        </div>
+        <div class="dash-legend">
+          <span class="legend-item"><span class="legend-dot" style="background:#2B5BA8"></span> Kontaktierte Leads</span>
+          <span class="legend-item"><span class="legend-dot legend-dot-dashed"></span> Antworten</span>
+        </div>
+      </div>
+      <div class="dash-card r">
+        <div class="dash-card-header">
+          <span class="dash-card-title">Pipeline</span>
+        </div>
+        <div class="funnel" id="funnel">
+          <div class="funnel-row">
+            <span class="funnel-label">Recherchiert</span>
+            <div class="funnel-bar-wrap"><div class="funnel-bar" data-width="100" style="background:#1A3050"></div></div>
+            <span class="funnel-num" data-target="847">0</span>
+          </div>
+          <div class="funnel-row">
+            <span class="funnel-label">Qualifiziert</span>
+            <div class="funnel-bar-wrap"><div class="funnel-bar" data-width="62" style="background:#1C4380"></div></div>
+            <span class="funnel-num" data-target="524">0</span>
+          </div>
+          <div class="funnel-row">
+            <span class="funnel-label">Kontaktiert</span>
+            <div class="funnel-bar-wrap"><div class="funnel-bar" data-width="55" style="background:#2B5BA8"></div></div>
+            <span class="funnel-num" data-target="468">0</span>
+          </div>
+          <div class="funnel-row">
+            <span class="funnel-label">Geantwortet</span>
+            <div class="funnel-bar-wrap"><div class="funnel-bar" data-width="12" style="background:#6B85A0"></div></div>
+            <span class="funnel-num" data-target="54">0</span>
+          </div>
+          <div class="funnel-row">
+            <span class="funnel-label">Termin</span>
+            <div class="funnel-bar-wrap"><div class="funnel-bar" data-width="5" style="background:#9DB0C4"></div></div>
+            <span class="funnel-num" data-target="23">0</span>
+          </div>
+        </div>
+      </div>
+      <div class="dash-card r">
+        <div class="dash-card-header">
+          <span class="dash-card-title">Heute</span>
+        </div>
+        <div class="dash-metrics">
+          <div class="dash-metric">
+            <div class="dash-metric-val" data-target="12">0</div>
+            <div class="dash-metric-label">Neue Leads recherchiert</div>
+          </div>
+          <div class="dash-metric">
+            <div class="dash-metric-val" data-target="8">0</div>
+            <div class="dash-metric-label">E-Mails versendet</div>
+          </div>
+          <div class="dash-metric">
+            <div class="dash-metric-val" data-target="3">0</div>
+            <div class="dash-metric-label">Antworten erhalten</div>
+          </div>
+          <div class="dash-metric">
+            <div class="dash-metric-val accent" data-target="1">0</div>
+            <div class="dash-metric-label">Neuer Termin</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="dash-note r">Beispielhafte Darstellung. Die tatsächlichen Zahlen hängen von Ihrer Zielgruppe und Ihrem Angebot ab.</p>
+  </div>
+</section>
+
 <!-- ═══ ERGEBNISSE ═══ -->
 <section class="oa-dark">
   <div class="oa-wrap">
@@ -623,5 +725,200 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
   section { padding: 64px 20px; }
   .oa-cta { padding: 64px 20px; }
   .oa-comp { min-width: 500px; }
+  .dash-section { padding: 64px 20px; }
+  .dash-grid { grid-template-columns: 1fr; }
+  .dash-card-wide { grid-column: span 1; }
+  .dash-metrics { grid-template-columns: 1fr 1fr; }
+}
+
+/* ─── DASHBOARD ─── */
+.dash-section {
+  background: var(--navy);
+  padding: 120px 64px;
+}
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 12px;
+}
+.dash-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(107,133,160,0.12);
+  border-radius: 8px;
+  padding: 28px 32px;
+}
+.dash-card-wide { grid-column: span 2; }
+.dash-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.dash-card-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--slate-2);
+  letter-spacing: 0.02em;
+}
+.dash-card-period {
+  font-size: 11px;
+  color: var(--slate);
+  letter-spacing: 0.05em;
+}
+
+/* Chart */
+.dash-chart { position: relative; margin-bottom: 16px; }
+.chart-svg { width: 100%; height: 200px; display: block; }
+.chart-line-1, .chart-line-2 {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  transition: stroke-dashoffset 2s cubic-bezier(0.16,1,0.3,1);
+}
+.chart-area-1, .chart-area-2 {
+  opacity: 0;
+  transition: opacity 1.5s ease 0.8s;
+}
+.dash-card.animated .chart-line-1,
+.dash-card.animated .chart-line-2 { stroke-dashoffset: 0; }
+.dash-card.animated .chart-area-1,
+.dash-card.animated .chart-area-2 { opacity: 1; }
+.chart-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0 0;
+}
+.chart-labels span {
+  font-size: 10px;
+  color: var(--slate);
+  letter-spacing: 0.05em;
+}
+.dash-legend {
+  display: flex;
+  gap: 24px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--slate-2);
+}
+.legend-dot {
+  width: 10px;
+  height: 3px;
+  border-radius: 1px;
+}
+.legend-dot-dashed {
+  background: transparent;
+  border-top: 2px dashed var(--slate);
+  width: 14px;
+  height: 0;
+}
+
+/* Funnel */
+.funnel { display: flex; flex-direction: column; gap: 14px; }
+.funnel-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 48px;
+  align-items: center;
+  gap: 12px;
+}
+.funnel-label {
+  font-size: 12px;
+  color: var(--slate-2);
+  text-align: right;
+}
+.funnel-bar-wrap {
+  height: 24px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.funnel-bar {
+  height: 100%;
+  width: 0;
+  border-radius: 4px;
+  transition: width 1.5s cubic-bezier(0.16,1,0.3,1);
+}
+.dash-card.animated .funnel-bar {
+  width: var(--bar-w);
+}
+.funnel-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--white);
+  text-align: right;
+}
+
+/* Metrics */
+.dash-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.dash-metric { text-align: center; }
+.dash-metric-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.dash-metric-val.accent { color: #4CAF50; }
+.dash-metric-label {
+  font-size: 11px;
+  color: var(--slate-2);
+  line-height: 1.4;
+}
+.dash-note {
+  font-size: 12px;
+  color: var(--slate);
+  text-align: center;
+  margin-top: 32px;
+  font-style: italic;
 }
 </style>
+
+<script is:inline>
+(function() {
+  function animateCounters(container) {
+    const nums = container.querySelectorAll('[data-target]');
+    nums.forEach(el => {
+      const target = parseInt(el.dataset.target);
+      const duration = 1500;
+      const start = performance.now();
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(target * eased);
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+  function initFunnelBars(container) {
+    const bars = container.querySelectorAll('.funnel-bar');
+    bars.forEach(bar => {
+      bar.style.setProperty('--bar-w', bar.dataset.width + '%');
+    });
+  }
+
+  const cards = document.querySelectorAll('.dash-card');
+  if (!cards.length) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !e.target.classList.contains('animated')) {
+        e.target.classList.add('animated');
+        animateCounters(e.target);
+        initFunnelBars(e.target);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(c => obs.observe(c));
+})();
+</script>
