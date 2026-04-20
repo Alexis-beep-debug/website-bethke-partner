@@ -76,11 +76,87 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
   </div>
 </section>
 
+<!-- TECHNISCHES FUNDAMENT -->
+<section class="alt">
+  <div class="oa-wrap">
+    <h2 class="oa-h2 r">Was Sie nicht selbst aufbauen müssen</h2>
+    <p class="oa-lead r">Eine funktionierende Outbound-Infrastruktur ist nicht trivial. Ohne sie landen Ihre E-Mails im Spam und Ihre Hauptdomain nimmt Schaden. Wir übernehmen das komplett.</p>
+    <div class="foundation-grid r">
+      <div class="foundation-card">
+        <div class="foundation-label">01</div>
+        <h3 class="foundation-title">Separate Versand-Domains</h3>
+        <p class="foundation-body">Ihre Hauptdomain wird nie für Outbound genutzt. Wir richten Lookalike-Domains ein — so bleibt Ihre Reputation geschützt, auch wenn mal etwas schiefgeht.</p>
+      </div>
+      <div class="foundation-card">
+        <div class="foundation-label">02</div>
+        <h3 class="foundation-title">Authentifizierung</h3>
+        <p class="foundation-body">SPF, DKIM und DMARC sauber eingerichtet. Das ist die Voraussetzung dafür, dass Google und Microsoft Ihre E-Mails überhaupt durchlassen.</p>
+      </div>
+      <div class="foundation-card">
+        <div class="foundation-label">03</div>
+        <h3 class="foundation-title">Warmup</h3>
+        <p class="foundation-body">Jedes neue Postfach wird über Wochen langsam aufgewärmt, bevor echte Outbound-E-Mails laufen. Sonst landet alles direkt im Spam.</p>
+      </div>
+      <div class="foundation-card">
+        <div class="foundation-label">04</div>
+        <h3 class="foundation-title">Volumen-Management</h3>
+        <p class="foundation-body">Jedes Postfach sendet nur begrenzt viele E-Mails pro Tag. Brauchen Sie mehr Volumen, fügen wir mehr Postfächer hinzu — statt die Limits zu überreizen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WANN ES FUNKTIONIERT -->
+<section>
+  <div class="oa-wrap">
+    <h2 class="oa-h2 r">Wann es für Sie funktioniert</h2>
+    <p class="oa-lead r">Outbound ist kein Allheilmittel. Wir sagen Ihnen ehrlich, wenn es nicht passt. Damit es funktioniert, sollten diese vier Grundlagen stimmen:</p>
+    <div class="fit-grid r">
+      <div class="fit-item">
+        <div class="fit-check">✓</div>
+        <div>
+          <h4>Ausreichende Marktgröße</h4>
+          <p>Ihre Zielgruppe besteht aus mindestens einigen tausend Unternehmen — nicht nur zehn spezifischen Accounts.</p>
+        </div>
+      </div>
+      <div class="fit-item">
+        <div class="fit-check">✓</div>
+        <div>
+          <h4>Deal-Wert passt zum Aufwand</h4>
+          <p>Ein Abschluss bringt Ihnen genug Umsatz, damit sich Outbound rechnet. Bei sehr niedrigen Deal-Werten ist Inbound meist sinnvoller.</p>
+        </div>
+      </div>
+      <div class="fit-item">
+        <div class="fit-check">✓</div>
+        <div>
+          <h4>Nachgewiesene Nachfrage</h4>
+          <p>Sie haben bereits zahlende Kunden. Outbound verstärkt, was funktioniert — es erfindet keinen Markt neu.</p>
+        </div>
+      </div>
+      <div class="fit-item">
+        <div class="fit-check">✓</div>
+        <div>
+          <h4>Klare Differenzierung</h4>
+          <p>Sie können in einem Satz erklären, warum jemand Sie nehmen sollte und nicht den Wettbewerb. Reine Commodities sind schwer per Outbound zu verkaufen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="alt">
   <div class="oa-wrap">
     <h2 class="oa-h2 r">Häufige Fragen</h2>
     <div class="faq-list">
+      <details class="faq-item r">
+        <summary class="faq-q">Was passiert mit unserer Domain? Wird sie beschädigt?</summary>
+        <p class="faq-a">Nein. Wir senden nie von Ihrer Hauptdomain. Stattdessen richten wir separate Lookalike-Domains ein — zum Beispiel firma-kontakt.de statt firma.de. Ihre Hauptdomain bleibt komplett unberührt, auch wenn eine Outbound-Domain mal Reputation verlieren sollte.</p>
+      </details>
+      <details class="faq-item r">
+        <summary class="faq-q">Wir haben Kaltakquise schon probiert und es hat nicht funktioniert. Warum soll es jetzt anders sein?</summary>
+        <p class="faq-a">Meist scheitert Outbound an einem von drei Punkten: Die E-Mails landen im Spam (Zustellbarkeit), die Liste passt nicht (falsche Zielgruppe), oder die Botschaft trifft nicht (schwaches Angebot). Wir prüfen im Erstgespräch, woran es bei Ihnen gelegen hat — und ob wir die Ursache beheben können.</p>
+      </details>
       <details class="faq-item r">
         <summary class="faq-q">Woher weiß das System, was es über die Firma schreiben soll?</summary>
         <p class="faq-a">Es liest die Firmenwebseite, aktuelle Stellenanzeigen und öffentlich verfügbare Informationen. Daraus leitet es ab, woran die Firma gerade arbeitet und wo ein Anknüpfungspunkt zu Ihrem Angebot bestehen könnte.</p>
@@ -261,6 +337,83 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
 .email-bad .email-verdict { color: var(--muted); }
 .email-good .email-verdict { color: var(--blue); }
 
+/* Lead paragraph */
+.oa-lead {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.8;
+  max-width: 640px;
+  margin-top: -28px;
+  margin-bottom: 48px;
+}
+
+/* Foundation grid */
+.foundation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.foundation-card {
+  background: var(--white);
+  padding: 36px 32px;
+}
+.foundation-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+.foundation-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.foundation-body {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.75;
+}
+
+/* Fit grid */
+.fit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 48px;
+}
+.fit-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.fit-check {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(28,67,128,0.08);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+.fit-item h4 {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.fit-item p {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
 /* FAQ */
 .faq-list { max-width: 700px; }
 .faq-item { border-bottom: 1px solid var(--border); }
@@ -327,6 +480,9 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
   .flow-arrow { transform: rotate(90deg); align-self: center; }
   .flow-step { padding: 0; }
   .compare-emails { grid-template-columns: 1fr; }
+  .foundation-grid { grid-template-columns: 1fr; }
+  .fit-grid { grid-template-columns: 1fr; gap: 28px; }
+  .oa-lead { margin-top: -20px; }
   section { padding: 64px 20px; }
   .oa-cta { padding: 64px 20px; }
 }
