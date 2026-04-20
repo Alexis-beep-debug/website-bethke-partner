@@ -212,6 +212,47 @@ const structuredData = {
   </div>
 </section>
 
+<!-- ═══ WANN ES FUNKTIONIERT ═══ -->
+<section id="fit" class="alt">
+  <div class="wrap">
+    <div class="r">
+      <div class="sec-label"><span class="sec-label-num">—</span> Passt das zu uns?</div>
+      <h2 class="sec-h">Wann Outbound für Sie<br><em>funktioniert — und wann nicht.</em></h2>
+      <p class="sec-intro">Outbound ist kein Allheilmittel. Wir sagen Ihnen im Erstgespräch ehrlich, ob es passt. Damit es funktioniert, sollten diese vier Grundlagen stimmen:</p>
+    </div>
+    <div class="fit-grid r" style="margin-top:48px;">
+      <div class="fit-item">
+        <div class="fit-check">✓</div>
+        <div>
+          <h4>Ausreichend großer Zielmarkt</h4>
+          <p>Ihre Zielgruppe besteht aus mindestens einigen tausend Unternehmen — nicht nur zehn spezifischen Accounts.</p>
+        </div>
+      </div>
+      <div class="fit-item">
+        <div class="fit-check">✓</div>
+        <div>
+          <h4>Deal-Wert passt zum Aufwand</h4>
+          <p>Ein Abschluss bringt Ihnen genug Umsatz, damit sich Outbound rechnet. Bei sehr niedrigen Deal-Werten ist Inbound meist sinnvoller.</p>
+        </div>
+      </div>
+      <div class="fit-item">
+        <div class="fit-check">✓</div>
+        <div>
+          <h4>Nachgewiesene Nachfrage</h4>
+          <p>Sie haben bereits zahlende Kunden. Outbound verstärkt, was funktioniert — es erfindet keinen Markt neu.</p>
+        </div>
+      </div>
+      <div class="fit-item">
+        <div class="fit-check">✓</div>
+        <div>
+          <h4>Klare Differenzierung</h4>
+          <p>Sie können in einem Satz erklären, warum jemand Sie nehmen sollte und nicht den Wettbewerb. Reine Commodities sind schwer per Outbound zu verkaufen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ PREISMODELL ═══ -->
 <section id="investition">
   <div class="wrap">
@@ -283,6 +324,42 @@ const structuredData = {
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="r">
+      <div class="sec-label"><span class="sec-label-num">—</span> Häufige Fragen</div>
+      <h2 class="sec-h">Was Sie vor einem Gespräch<br><em>wissen möchten.</em></h2>
+    </div>
+    <div class="faq-list r" style="margin-top:48px;">
+      <details class="faq-item">
+        <summary class="faq-q">Was kostet die Zusammenarbeit?</summary>
+        <p class="faq-a">Beim Vertrieb durch Menschen ist unsere Vergütung an gelieferte Sales Qualified Leads gekoppelt. Beim Outbound Agent gibt es ein einmaliges Setup und einen monatlichen Retainer. Die konkreten Zahlen hängen von Ihrer Zielgruppe und Ihrem Deal-Wert ab — wir rechnen das im Erstgespräch gemeinsam durch.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Wann kommen die ersten Ergebnisse?</summary>
+        <p class="faq-a">Die erste Ansprache läuft nach etwa zwei Wochen Setup. Erste qualifizierte Reaktionen sehen Sie typischerweise ab Woche drei bis vier. Einen belastbaren Eindruck, ob die Zielgruppe funktioniert, haben wir nach acht bis zwölf Wochen.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Menschen oder Outbound Agent — was passt für uns?</summary>
+        <p class="faq-a">Komplexe Produkte mit beratungsintensivem Verkauf profitieren vom Vertrieb durch Menschen. Wenn Ihr Angebot in der E-Mail erklärbar ist und Volumen zählt, ist der Outbound Agent meist wirtschaftlicher. Oft macht auch die Kombination Sinn — das klären wir im Gespräch.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Wem gehören die Daten und Kontakte?</summary>
+        <p class="faq-a">Ihnen. Kontaktlisten, E-Mail-Sequenzen, Reporting — alles, was wir aufbauen, gehört Ihrem Unternehmen. Wenn Sie die Zusammenarbeit beenden, nehmen Sie alles mit. Kein Vendor Lock-in.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Wie lange binden wir uns?</summary>
+        <p class="faq-a">Wir empfehlen mindestens zwölf Wochen, weil Outbound Zeit braucht um zu wirken. Wir binden Sie aber nicht an lange Verträge. Wenn es nach vier Wochen nicht passt, reden wir darüber.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Für wen ist das nicht geeignet?</summary>
+        <p class="faq-a">Wenn Ihr Zielmarkt sehr klein ist (weniger als ein paar tausend Unternehmen), wenn Ihr durchschnittlicher Deal-Wert sehr gering ist, oder wenn Sie noch keine zahlenden Kunden haben — dann ist Outbound oft nicht der richtige Hebel. Wir sagen das im Erstgespräch ehrlich.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -1232,5 +1309,87 @@ a.offer-card-link:hover { background: var(--bg); }
   font-size: 16px;
   color: var(--white);
   font-weight: 400;
+}
+
+/* ─── FIT GRID ─── */
+.fit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 48px;
+}
+.fit-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.fit-check {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(28,67,128,0.08);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+.fit-item h4 {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.fit-item p {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+/* ─── FAQ ─── */
+.faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+.faq-item:first-child {
+  border-top: 1px solid var(--border);
+}
+.faq-q {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--navy);
+  padding: 24px 0;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.faq-q::after {
+  content: '+';
+  font-size: 22px;
+  color: var(--slate);
+  font-weight: 300;
+  flex-shrink: 0;
+  transition: transform 0.25s;
+}
+.faq-item[open] .faq-q::after { content: '−'; }
+.faq-q::-webkit-details-marker { display: none; }
+.faq-a {
+  font-size: 14.5px;
+  color: var(--text-2);
+  line-height: 1.8;
+  padding: 0 0 24px;
+  max-width: 720px;
+}
+
+@media (max-width: 768px) {
+  .fit-grid { grid-template-columns: 1fr; gap: 28px; }
+  .faq-q { font-size: 15px; padding: 20px 0; gap: 16px; }
 }
 </style>
