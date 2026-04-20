@@ -21,6 +21,31 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
   </div>
 </div>
 
+<!-- FÜR WEN -->
+<section>
+  <div class="oa-wrap">
+    <h2 class="oa-h2 r">Für SaaS-Unternehmen und IT-Dienstleister,<br>die Outbound nicht selbst stemmen können oder wollen</h2>
+    <div class="for-grid r">
+      <div class="for-card">
+        <div class="for-tag">SaaS-Unternehmen</div>
+        <p>Das Produkt ist fertig, aber die Pipeline läuft über Empfehlungen oder Zufall. Ein eigener SDR rechnet sich nicht oder braucht zu lange bis zur Produktivität.</p>
+      </div>
+      <div class="for-card">
+        <div class="for-tag">IT-Dienstleister</div>
+        <p>Ihre Berater sind keine Vertriebler. Sie brauchen jemanden, der die erste Tür öffnet — ohne dass Ihre Fachleute kalt akquirieren müssen.</p>
+      </div>
+      <div class="for-card">
+        <div class="for-tag">Teams mit SDR</div>
+        <p>Ihr SDR-Team konzentriert sich auf warme Leads. Der Agent übernimmt die Recherche und Erstansprache per E-Mail, damit Ihre Leute mehr Zeit für echte Gespräche haben.</p>
+      </div>
+      <div class="for-card">
+        <div class="for-tag">Gründer im Vertrieb</div>
+        <p>Sie machen Vertrieb noch selbst nebenbei. Der Agent nimmt Ihnen die zeitintensivste Arbeit ab: Leads finden, prüfen, anschreiben.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WIE ES FUNKTIONIERT -->
 <section class="alt">
   <div class="oa-wrap">
@@ -269,6 +294,32 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
   line-height: 1.15;
 }
 
+/* For grid */
+.for-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.for-card {
+  background: var(--bg);
+  padding: 36px 32px;
+}
+.for-tag {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue-mid);
+  margin-bottom: 14px;
+}
+.for-card p {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.75;
+}
+
 /* Flow */
 .flow {
   display: flex;
@@ -480,6 +531,7 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
   .flow-arrow { transform: rotate(90deg); align-self: center; }
   .flow-step { padding: 0; }
   .compare-emails { grid-template-columns: 1fr; }
+  .for-grid { grid-template-columns: 1fr; }
   .foundation-grid { grid-template-columns: 1fr; }
   .fit-grid { grid-template-columns: 1fr; gap: 28px; }
   .oa-lead { margin-top: -20px; }
