@@ -83,18 +83,44 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
       <div class="email-card email-bad">
         <div class="email-label">Typische Outbound-E-Mail</div>
         <div class="email-body">
-          <p>Sehr geehrter Herr Müller,</p>
-          <p>wir sind ein führender Anbieter für IT-Lösungen und helfen Unternehmen wie Ihrem, ihre Prozesse zu optimieren. Gerne würde ich Ihnen in einem kurzen Gespräch zeigen, wie auch Sie davon profitieren können.</p>
-          <p>Haben Sie diese Woche 15 Minuten Zeit?</p>
+          <div class="email-line">
+            <p>Sehr geehrter Herr Müller,</p>
+            <span class="email-tag tag-bad">Generische Anrede</span>
+          </div>
+          <div class="email-line">
+            <p>wir sind ein führender Anbieter für IT-Lösungen und helfen Unternehmen wie Ihrem, ihre Prozesse zu optimieren. Gerne würde ich Ihnen in einem kurzen Gespräch zeigen, wie auch Sie davon profitieren können.</p>
+            <span class="email-tag tag-bad">Über sich selbst, kein Bezug zum Empfänger</span>
+          </div>
+          <div class="email-line">
+            <p>Haben Sie diese Woche 15 Minuten Zeit?</p>
+            <span class="email-tag tag-bad">Aggressiver CTA ohne Mehrwert</span>
+          </div>
         </div>
         <div class="email-verdict">Liest niemand. Löscht jeder.</div>
       </div>
       <div class="email-card email-good">
         <div class="email-label">Unser Outbound Agent</div>
         <div class="email-body">
-          <p>Herr Müller,</p>
-          <p>ich habe gesehen, dass datacraft gerade einen Senior DevOps Engineer sucht. Das spricht dafür, dass Ihre Infrastruktur wächst. Viele IT-Dienstleister in dieser Phase merken, dass ihr Monitoring nicht mitskaliert.</p>
-          <p>Wir haben für zwei Unternehmen in einer ähnlichen Situation die Überwachung ihrer Kundenumgebungen automatisiert. Hätten Sie Dienstag oder Donnerstag 15 Minuten für einen kurzen Austausch?</p>
+          <div class="email-line">
+            <p>Herr Müller,</p>
+            <span class="email-tag tag-good">Direkte Ansprache</span>
+          </div>
+          <div class="email-line">
+            <p>ich habe gesehen, dass datacraft gerade einen Senior DevOps Engineer sucht. Das spricht dafür, dass Ihre Infrastruktur wächst.</p>
+            <span class="email-tag tag-good">Personalisierung — echtes Signal von der Firmenwebseite</span>
+          </div>
+          <div class="email-line">
+            <p>Viele IT-Dienstleister in dieser Phase merken, dass ihr Monitoring nicht mitskaliert.</p>
+            <span class="email-tag tag-good">Problem benennen — relevanter Schmerzpunkt</span>
+          </div>
+          <div class="email-line">
+            <p>Wir haben für zwei Unternehmen in einer ähnlichen Situation die Überwachung ihrer Kundenumgebungen automatisiert.</p>
+            <span class="email-tag tag-good">Social Proof — konkreter Kundencase</span>
+          </div>
+          <div class="email-line">
+            <p>Hätten Sie Dienstag oder Donnerstag 15 Minuten für einen kurzen Austausch?</p>
+            <span class="email-tag tag-good">Soft CTA — konkreter Vorschlag, kein Druck</span>
+          </div>
         </div>
         <div class="email-verdict">Konkreter Bezug. Echtes Interesse.</div>
       </div>
@@ -377,6 +403,33 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
 .email-body p:last-child { margin-bottom: 0; }
 .email-bad { background: var(--bg); }
 .email-bad .email-body { opacity: 0.6; }
+
+/* Email annotations */
+.email-line {
+  position: relative;
+  margin-bottom: 16px;
+}
+.email-line:last-child { margin-bottom: 0; }
+.email-line p { margin-bottom: 0; }
+.email-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-top: 8px;
+}
+.tag-bad {
+  background: rgba(192,57,43,0.06);
+  color: rgba(192,57,43,0.6);
+  border: 1px solid rgba(192,57,43,0.1);
+}
+.tag-good {
+  background: rgba(28,67,128,0.06);
+  color: var(--blue);
+  border: 1px solid rgba(28,67,128,0.12);
+}
 .email-good { background: var(--white); }
 .email-verdict {
   margin-top: 20px;
