@@ -171,17 +171,18 @@ const structuredData = {
       void toast.offsetWidth;
       toast.classList.add('lc-toast-show');
 
-      // Remove old card after animation
-      const oldCard = stack.querySelector('.lc');
+      // Crossfade: start exit, then overlap with new card
+      const oldCard = stack.querySelector('.lc:not(.lc-exit)');
       if (oldCard) {
+        oldCard.classList.remove('lc-enter');
         oldCard.classList.add('lc-exit');
-        setTimeout(() => oldCard.remove(), 500);
+        setTimeout(() => oldCard.remove(), 1000);
       }
 
-      // Add new card
+      // New card glides in while old one glides out
       setTimeout(() => {
         stack.insertAdjacentHTML('beforeend', buildCard(lead));
-      }, 300);
+      }, 200);
 
       index++;
     }
@@ -819,8 +820,8 @@ const structuredData = {
 }
 
 /* ─── LEAD CARD FEED ─── */
-.lc-feed { position: relative; }
-.lc-stack { position: relative; }
+.lc-feed { position: relative; width: 340px; }
+.lc-stack { position: relative; min-height: 480px; }
 
 /* Toast notification */
 .lc-toast {
@@ -850,13 +851,16 @@ const structuredData = {
 }
 
 /* Card enter/exit */
-.lc-enter {
-  animation: cardIn 1s cubic-bezier(0.22,1,0.36,1) forwards;
-}
-.lc-exit {
-  animation: cardOut 0.8s cubic-bezier(0.55,0,1,0.45) forwards;
+.lc-stack .lc {
   position: absolute;
   top: 0; left: 0; right: 0;
+  width: 100%;
+}
+.lc-enter {
+  animation: cardIn 1.2s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+.lc-exit {
+  animation: cardOut 1s cubic-bezier(0.4,0,0.2,1) forwards;
 }
 
 /* Badge pop on new card */
