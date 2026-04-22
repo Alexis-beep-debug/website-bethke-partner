@@ -50,17 +50,18 @@ const structuredData = {
 
 <!-- HERO -->
 <div class="ls-hero">
-  <div class="ls-inner">
-    <div class="ls-tag"><span class="ls-tag-line"></span> Leadrecherche &amp; Scoring</div>
-    <h1 class="ls-h1">70 % weniger Kosten.<br><em>Bessere Kontakte.</em></h1>
-    <p class="ls-sub">Für Marketing-Agenturen, die neue Kunden gewinnen wollen: Wir suchen die Firmen, die zu Ihrem Angebot passen, finden den richtigen Ansprechpartner und prüfen, ob es gerade einen Grund gibt, sie anzurufen.</p>
-    <div class="ls-actions">
-      <a href={calUrl} target="_blank" rel="noopener" class="btn-primary">Erstgespräch vereinbaren</a>
+  <div class="ls-hero-grid">
+    <div class="ls-inner">
+      <div class="ls-tag"><span class="ls-tag-line"></span> Leadrecherche &amp; Scoring</div>
+      <h1 class="ls-h1">70 % weniger Kosten.<br><em>Bessere Kontakte.</em></h1>
+      <p class="ls-sub">Für Marketing-Agenturen, die neue Kunden gewinnen wollen: Wir suchen die Firmen, die zu Ihrem Angebot passen, finden den richtigen Ansprechpartner und prüfen, ob es gerade einen Grund gibt, sie anzurufen.</p>
+      <div class="ls-actions">
+        <a href={calUrl} target="_blank" rel="noopener" class="btn-primary">Erstgespräch vereinbaren</a>
+      </div>
     </div>
-  </div>
 
-  <!-- ANIMATED LEAD CARD FEED -->
-  <div class="lead-card-visual">
+    <!-- ANIMATED LEAD CARD FEED -->
+    <div class="lead-card-visual">
     <div class="lc-feed">
       <!-- Toast notification -->
       <div class="lc-toast" id="lcToast">
@@ -193,6 +194,7 @@ const structuredData = {
     setInterval(showCard, 5000);
   })();
   </script>
+  </div>
 </div>
 
 <!-- FÜR WEN -->
@@ -651,15 +653,10 @@ const structuredData = {
 
 /* ─── LEAD CARD VISUAL ─── */
 .lead-card-visual {
-  position: absolute;
-  right: 0;
-  left: 55%;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  pointer-events: none;
   display: flex;
   justify-content: center;
+  align-items: center;
+  pointer-events: none;
 }
 .lc {
   width: 340px;
@@ -905,14 +902,21 @@ const structuredData = {
 
 /* Hero layout */
 .ls-hero {
-  display: flex;
-  align-items: center;
   position: relative;
   overflow: hidden;
 }
+.ls-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
 .ls-inner {
-  max-width: 500px;
-  flex-shrink: 0;
+  max-width: 520px;
 }
 
 /* ─── COMMON ─── */
@@ -1510,21 +1514,15 @@ const structuredData = {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1100px) {
-  .lead-card-visual { left: 50%; }
-  .lc { width: 290px; }
-  .lc-header { padding: 16px 20px; }
-  .lc-section { padding: 12px 20px; }
-  .lc-details { padding: 12px 20px; }
-  .lc-score-section { padding: 12px 20px 16px; }
+  .lc { width: 300px; }
 }
 @media (max-width: 900px) {
+  .ls-hero-grid { grid-template-columns: 1fr; }
   .lead-card-visual { display: none; }
   .ls-inner { max-width: 100%; }
 }
 @media (max-width: 768px) {
   .ls-hero { padding: 80px 20px 48px; min-height: auto; }
-  .lead-card-visual { display: none; }
-  .ls-inner { max-width: 100%; }
   .ls-h1 { font-size: 36px; }
   .today-grid { grid-template-columns: 1fr; gap: 24px; }
   .lever-grid { flex-direction: column; }
