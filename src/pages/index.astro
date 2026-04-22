@@ -115,7 +115,7 @@ const structuredData = {
   <div class="wrap">
     <div class="r">
       <div class="sec-label"><span class="sec-label-num">01</span> Leistungen</div>
-      <h2 class="sec-h">Vertrieb durch Menschen<br><em>oder durch unser System</em></h2>
+      <h2 class="sec-h">Vertrieb durch Menschen,<br><em>System oder bessere Daten</em></h2>
     </div>
     <div class="offerings-grid">
       <div class="offer-card r d1">
@@ -128,6 +128,12 @@ const structuredData = {
         <div class="offer-tag">Outbound Agent</div>
         <h3 class="offer-title">Leadrecherche, Scoring und E-Mail — automatisch</h3>
         <p class="offer-body">Unser System findet Firmen, die zu Ihnen passen, bewertet jeden Kontakt und schreibt individuelle E-Mails. Kein Template.</p>
+        <span class="offer-cta">Mehr erfahren <span aria-hidden="true">→</span></span>
+      </a>
+      <a href="/lead-scoring" class="offer-card offer-card-link r d3">
+        <div class="offer-tag">Leadrecherche &amp; Scoring</div>
+        <h3 class="offer-title">Die richtigen Kontakte, bevor Sie zum Hörer greifen</h3>
+        <p class="offer-body">Wir recherchieren, anreichern und scoren Ihre Zielkontakte — Sie sprechen nur mit Firmen, die gerade Kaufsignale zeigen. DSGVO-konform.</p>
         <span class="offer-cta">Mehr erfahren <span aria-hidden="true">→</span></span>
       </a>
     </div>
@@ -1126,7 +1132,7 @@ a.s-card-link:hover .s-card-cta { gap: 14px; color: var(--navy); }
 /* ─── NEW: OFFERINGS GRID ─── */
 .offerings-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -1154,7 +1160,7 @@ a.offer-card-link:hover { background: var(--bg); }
 .offer-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 28px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2;
   color: var(--navy);
   margin-bottom: 20px;
