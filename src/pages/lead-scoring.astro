@@ -652,11 +652,14 @@ const structuredData = {
 /* ─── LEAD CARD VISUAL ─── */
 .lead-card-visual {
   position: absolute;
-  right: 10%;
+  right: 0;
+  left: 55%;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
   pointer-events: none;
+  display: flex;
+  justify-content: center;
 }
 .lc {
   width: 340px;
@@ -1507,7 +1510,7 @@ const structuredData = {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1100px) {
-  .lead-card-visual { right: 5%; }
+  .lead-card-visual { left: 50%; }
   .lc { width: 290px; }
   .lc-header { padding: 16px 20px; }
   .lc-section { padding: 12px 20px; }
