@@ -56,45 +56,38 @@ const structuredData = {
 <!-- FÜR WEN -->
 <section class="alt">
   <div class="ls-wrap">
-    <h2 class="ls-h2 r">Kommt Ihnen das bekannt vor?</h2>
-    <div class="icp-grid r">
-      <div class="icp-card">
-        <div class="icp-tag">Marketing-Agentur, 5–30 Mitarbeiter</div>
-        <p>Sie machen gute Arbeit für Ihre Kunden, aber Neukundengewinnung läuft nebenbei. Der Gründer oder ein kleines Sales-Team telefoniert, wenn Zeit ist. Neue Kunden kommen über Empfehlungen — aber das reicht nicht mehr zum Wachsen.</p>
-      </div>
-      <div class="icp-card">
-        <div class="icp-tag">IT-Dienstleister oder SaaS-Unternehmen</div>
-        <p>Sie haben ein Angebot, das erklärungsbedürftig ist. Inbound allein bringt nicht genug. Outbound wäre die Lösung — aber Ihr Team weiß nicht, wen es anrufen soll, oder arbeitet mit veralteten Listen.</p>
-      </div>
+    <h2 class="ls-h2 r">Für Marketing-Agenturen, die Outbound ernst meinen</h2>
+    <div class="icp-card-single r">
+      <p>Sie sind eine Marketing-Agentur und gewinnen Neukunden über Kaltakquise, Direktmailing oder E-Mail-Outbound — oder Sie wollen genau damit anfangen. Sie wissen: Ohne gute Kontaktdaten funktioniert keiner dieser Kanäle. Aber woher kommen die Daten?</p>
     </div>
-    <h3 class="ls-h3 r">So kommen die meisten heute an ihre Kontakte:</h3>
+    <h3 class="ls-h3 r">So machen es die meisten heute:</h3>
     <div class="today-grid r">
       <div class="today-item">
         <div class="today-check">✗</div>
         <div>
-          <h4>LinkedIn durchsuchen</h4>
-          <p>Jemand scrollt durch LinkedIn, kopiert Namen und Firmen in eine Excel-Tabelle. Dauert Stunden, ist unvollständig und ohne System.</p>
-        </div>
-      </div>
-      <div class="today-item">
-        <div class="today-check">✗</div>
-        <div>
-          <h4>Listen kaufen</h4>
-          <p>Fertige Listen von Datenanbietern — veraltet, ungenau, keine Ahnung ob die Firma gerade Bedarf hat. 80 % der Nummern sind Zentrale oder falsch.</p>
+          <h4>Listen kaufen bei North Data, Cognism oder Dealfront</h4>
+          <p>Sie zahlen 1–2 € pro Kontakt für Massenlisten. Firmendaten stimmen meistens — aber ob die Firma gerade Bedarf hat, weiß niemand. Keine Kaufsignale, kein Scoring, viele tote Nummern.</p>
         </div>
       </div>
       <div class="today-item">
         <div class="today-check">✗</div>
         <div>
           <h4>Mitarbeiter recherchieren lassen</h4>
-          <p>Eine Teilzeitkraft oder ein Werkstudent googelt Firmen und trägt sie ein. Langsam, teuer pro Kontakt und ohne Qualitätskontrolle.</p>
+          <p>Eine Teilzeitkraft oder ein Werkstudent googelt Firmen, sucht Ansprechpartner bei LinkedIn und trägt alles in eine Tabelle ein. Langsam, teuer und ohne systematische Qualitätskontrolle.</p>
         </div>
       </div>
       <div class="today-item">
         <div class="today-check">✗</div>
         <div>
           <h4>Vertriebler recherchieren selbst</h4>
-          <p>Ihre besten Leute verbringen die Hälfte der Zeit mit Recherche statt mit Telefonieren. Sie bezahlen Vertriebsgehälter für Assistenz-Arbeit.</p>
+          <p>Ihre Closer oder SDRs verbringen die halbe Zeit damit, Kontakte zusammenzusuchen, statt zu telefonieren. Sie bezahlen Vertriebsgehälter für Recherche-Arbeit.</p>
+        </div>
+      </div>
+      <div class="today-item">
+        <div class="today-check">✗</div>
+        <div>
+          <h4>LinkedIn Sales Navigator</h4>
+          <p>Gut zum Filtern, aber keine Telefonnummern, keine E-Mails, kein Scoring. Am Ende kopieren Sie trotzdem alles per Hand in eine Excel.</p>
         </div>
       </div>
     </div>
@@ -499,30 +492,16 @@ const structuredData = {
 }
 
 /* ─── ICP ─── */
-.icp-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--border);
+.icp-card-single {
+  background: var(--white);
   border: 1px solid var(--border);
+  padding: 36px 32px;
   margin-bottom: 48px;
 }
-.icp-card {
-  background: var(--white);
-  padding: 36px 32px;
-}
-.icp-tag {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--blue-mid);
-  margin-bottom: 14px;
-}
-.icp-card p {
-  font-size: 14px;
+.icp-card-single p {
+  font-size: 15px;
   color: var(--text-2);
-  line-height: 1.75;
+  line-height: 1.8;
 }
 .ls-h3 {
   font-size: 17px;
@@ -994,7 +973,6 @@ const structuredData = {
 @media (max-width: 768px) {
   .ls-hero { padding: 80px 20px 48px; min-height: auto; }
   .ls-h1 { font-size: 36px; }
-  .icp-grid { grid-template-columns: 1fr; }
   .today-grid { grid-template-columns: 1fr; gap: 24px; }
   .lever-grid { flex-direction: column; }
   .lever-arrow { transform: rotate(90deg); }
