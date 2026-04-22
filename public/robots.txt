@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.bethke-und-partner.de/sitemap-index.xml

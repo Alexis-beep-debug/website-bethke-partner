@@ -1,20 +1,52 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "B2B Leadrecherche, Anreicherung & Scoring",
+  "provider": {
+    "@type": "ProfessionalService",
+    "@id": "https://www.bethke-und-partner.de/#organization"
+  },
+  "description": "DSGVO-konforme B2B-Leadrecherche mit Datenanreicherung und Scoring nach Kaufsignalen. Für telefonische Kaltakquise, Direktmailing und E-Mail-Outbound.",
+  "areaServed": { "@type": "Country", "name": "DE" },
+  "serviceType": ["Lead Scoring", "Leadrecherche", "Datenanreicherung", "B2B Lead Generation"],
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Recherche & Scoring",
+      "price": "0.35",
+      "priceCurrency": "EUR",
+      "description": "Pro Kontakt — inkl. Firmenrecherche, Anreicherung, Scoring"
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium: mit Kontaktdaten",
+      "price": "0.50",
+      "priceCurrency": "EUR",
+      "description": "Pro Kontakt — inkl. verifizierte E-Mail, Telefon, LinkedIn, Postadresse"
+    }
+  ]
+};
 ---
 
 <BaseLayout
   title="Leadrecherche, Anreicherung & Scoring | Bethke & Partner"
   description="Wir recherchieren, anreichern und scoren Ihre B2B-Zielkontakte — DSGVO-konform. Sie sprechen nur mit Firmen, die gerade Kaufsignale zeigen. Für Kaltakquise, Direktmailing und E-Mail-Outbound."
   activePage=""
+  ogTitle="B2B Leadrecherche & Scoring — ab 0,35 € pro Kontakt"
+  ogDescription="DSGVO-konforme Leadrecherche mit Scoring nach Kaufsignalen. Für Kaltakquise, Direktmailing und E-Mail-Outbound."
+  structuredData={structuredData}
 >
 
 <!-- HERO -->
 <div class="ls-hero">
   <div class="ls-inner">
     <div class="ls-tag"><span class="ls-tag-line"></span> Leadrecherche &amp; Scoring</div>
-    <h1 class="ls-h1">Bessere Leads.<br><em>Weniger Streuverlust.</em></h1>
-    <p class="ls-sub">Wir finden, anreichern und bewerten Ihre Zielkontakte — damit Ihr Vertrieb nur mit Firmen spricht, die gerade wirklich passen. Für telefonische Kaltakquise, Direktmailing oder E-Mail-Outbound.</p>
+    <h1 class="ls-h1">Bessere Listen.<br><em>Bessere Gespräche.</em></h1>
+    <p class="ls-sub">Für Marketing-Agenturen, die neue Kunden gewinnen wollen: Wir suchen die Firmen, die zu Ihrem Angebot passen, finden den richtigen Ansprechpartner und prüfen, ob es gerade einen Grund gibt, sie anzurufen. Sie bekommen eine fertige Liste — für Telefon, Post oder E-Mail.</p>
     <div class="ls-actions">
       <a href={calUrl} target="_blank" rel="noopener" class="btn-primary">Erstgespräch vereinbaren</a>
     </div>
@@ -24,21 +56,21 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
 <!-- WARUM LEAD-QUALITÄT DER GRÖSSTE HEBEL IST -->
 <section class="alt">
   <div class="ls-wrap">
-    <h2 class="ls-h2 r">Warum Lead-Qualität der größte Hebel ist</h2>
+    <h2 class="ls-h2 r">Wen Sie anrufen, entscheidet über das Ergebnis</h2>
     <div class="lever-grid r">
       <div class="lever-card lever-bad">
-        <div class="lever-label">Ohne Scoring</div>
+        <div class="lever-label">Ohne Vorauswahl</div>
         <div class="lever-stat">2–3 %</div>
-        <div class="lever-desc">Conversion Rate bei ungefilterten Listen. 97 von 100 Kontakten sind Zeitverschwendung.</div>
+        <div class="lever-desc">Von 100 Kontakten auf einer Standardliste sind 2–3 wirklich interessant. Der Rest ist verlorene Zeit.</div>
       </div>
       <div class="lever-arrow">→</div>
       <div class="lever-card lever-good">
-        <div class="lever-label">Mit Scoring</div>
+        <div class="lever-label">Mit Vorauswahl</div>
         <div class="lever-stat">8–15 %</div>
-        <div class="lever-desc">Conversion Rate bei vorqualifizierten Leads. Gleicher Aufwand, drei- bis fünfmal mehr Ergebnis.</div>
+        <div class="lever-desc">Gleicher Aufwand, aber drei- bis fünfmal mehr Gespräche, die zu etwas führen.</div>
       </div>
     </div>
-    <p class="ls-lead r">Jeder weiß es: Je besser die Liste, desto besser das Ergebnis. Trotzdem arbeiten die meisten Vertriebsteams mit generischen Firmenlisten aus Datenbanken — ohne zu wissen, ob der Kontakt gerade überhaupt relevant ist. Wir ändern das.</p>
+    <p class="ls-lead r">Die meisten Vertriebsteams arbeiten mit gekauften Firmenlisten — ohne zu wissen, ob die Firma gerade überhaupt Bedarf hat. Wir prüfen das vorher.</p>
   </div>
 </section>
 
@@ -50,22 +82,22 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
       <div class="pf-step">
         <div class="pf-num">01</div>
         <h3 class="pf-title">Recherche</h3>
-        <p class="pf-body">Wir identifizieren Unternehmen, die zu Ihrem ICP passen — nach Branche, Größe, Region, Technologie und Struktur. Keine generische Datenbank, sondern gezielt kuratiert.</p>
+        <p class="pf-body">Wir suchen Firmen, die zu Ihrem Angebot passen — nach Branche, Größe, Region und Struktur. Keine Massenliste aus einer Datenbank, sondern einzeln geprüft.</p>
       </div>
       <div class="pf-step">
         <div class="pf-num">02</div>
         <h3 class="pf-title">Anreicherung</h3>
-        <p class="pf-body">Jeder Kontakt wird angereichert: Entscheider-Name, Position, direkte E-Mail, Telefonnummer, LinkedIn-Profil. Verifiziert, nicht geraten.</p>
+        <p class="pf-body">Zu jeder Firma finden wir den richtigen Ansprechpartner: Name, Position, direkte E-Mail, Telefonnummer, LinkedIn. Geprüft, nicht geraten.</p>
       </div>
       <div class="pf-step">
         <div class="pf-num">03</div>
         <h3 class="pf-title">Scoring</h3>
-        <p class="pf-body">Wir bewerten jeden Lead anhand von Kaufsignalen und Trigger-Events. Nur Kontakte mit echtem Potenzial landen auf Ihrer Liste.</p>
+        <p class="pf-body">Wir prüfen, ob es gerade einen konkreten Grund gibt, die Firma anzusprechen — z.B. offene Stellen, neues Management oder Wachstum. Nur wer wirklich passt, kommt auf die Liste.</p>
       </div>
       <div class="pf-step">
         <div class="pf-num">04</div>
         <h3 class="pf-title">Übergabe</h3>
-        <p class="pf-body">Sie bekommen eine fertige, priorisierte Liste — bereit für Kaltakquise, Direktmailing oder E-Mail-Outbound. Im Format Ihrer Wahl.</p>
+        <p class="pf-body">Sie bekommen eine sortierte Liste — die vielversprechendsten Kontakte oben. Als CSV, Excel oder direkt in Ihr CRM.</p>
       </div>
     </div>
   </div>
@@ -74,50 +106,50 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
 <!-- TRIGGER-SIGNALE -->
 <section class="alt">
   <div class="ls-wrap">
-    <h2 class="ls-h2 r">Welche Kaufsignale wir erkennen</h2>
-    <p class="ls-lead r">Wir bringen die Kompetenz ein, um zu wissen, welche Trigger für Ihren Markt relevant sind. Hier sind einige der Signale, die wir auswerten:</p>
+    <h2 class="ls-h2 r">Woran wir erkennen, dass eine Firma gerade passt</h2>
+    <p class="ls-lead r">Nicht jede Firma auf einer Liste hat gerade Bedarf. Wir prüfen konkrete Signale, die zeigen, dass sich bei einer Firma etwas tut — und dass Ihr Angebot gerade relevant sein könnte.</p>
     <div class="trigger-grid r">
       <div class="trigger-card">
         <div class="trigger-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 11h5"/></svg>
         </div>
         <h4>Stellenanzeigen</h4>
-        <p>Eine Firma stellt SDRs ein? Sucht einen Head of Sales? Das zeigt Wachstumsabsicht — und dass Outbound-Unterstützung relevant ist.</p>
+        <p>Eine Firma sucht einen Head of Sales oder stellt Vertriebler ein? Dann wächst sie — und braucht wahrscheinlich Unterstützung dabei.</p>
       </div>
       <div class="trigger-card">
         <div class="trigger-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
         <h4>Technologie-Wechsel</h4>
-        <p>Neues CRM eingeführt? Migration auf die Cloud? Technologie-Veränderungen schaffen Bedarf — oft genau für Ihr Angebot.</p>
+        <p>Die Firma hat gerade ein neues CRM eingeführt oder migriert in die Cloud? Solche Umstellungen erzeugen konkreten Bedarf an Dienstleistungen.</p>
       </div>
       <div class="trigger-card">
         <div class="trigger-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
-        <h4>Finanzierungsrunden</h4>
-        <p>Frisches Kapital bedeutet Wachstumsdruck. Unternehmen nach einer Funding-Runde investieren — und entscheiden schneller.</p>
+        <h4>Frisches Kapital</h4>
+        <p>Nach einer Finanzierungsrunde wird investiert. Firmen mit frischem Geld treffen Entscheidungen schneller und haben Budget für neue Dienstleister.</p>
       </div>
       <div class="trigger-card">
         <div class="trigger-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h4>Führungswechsel</h4>
-        <p>Neuer CEO, neuer VP Sales, neuer CTO — neue Prioritäten. Die ersten 90 Tage sind die beste Zeit für Erstgespräche.</p>
+        <h4>Neue Leute in der Führung</h4>
+        <p>Ein neuer Geschäftsführer oder Vertriebsleiter bringt neue Prioritäten mit. In den ersten Monaten werden Dienstleister gewechselt und Budgets neu verteilt.</p>
       </div>
       <div class="trigger-card">
         <div class="trigger-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
         </div>
-        <h4>Wachstumssignale</h4>
-        <p>Neue Standorte, steigende Mitarbeiterzahl, Pressemeldungen zu Expansion — alles Indikatoren für Budget und Investitionsbereitschaft.</p>
+        <h4>Wachstum</h4>
+        <p>Neue Standorte, mehr Mitarbeiter, Pressemeldungen über Expansion — Firmen, die wachsen, haben Budget und brauchen Unterstützung.</p>
       </div>
       <div class="trigger-card">
         <div class="trigger-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
-        <h4>Vertragslaufzeiten</h4>
-        <p>Bestehende Verträge laufen aus? Wettbewerber-Kunden, deren Bindung endet, sind offen für Alternativen — wenn man zum richtigen Zeitpunkt kommt.</p>
+        <h4>Auslaufende Verträge</h4>
+        <p>Wenn ein bestehender Vertrag mit einem Wettbewerber ausläuft, ist die Firma offen für Alternativen. Wir finden den richtigen Zeitpunkt.</p>
       </div>
     </div>
   </div>
@@ -129,31 +161,31 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
     <h2 class="ls-h2 r">Wie unser Lead Scoring funktioniert</h2>
     <div class="scoring-example r">
       <div class="score-header">
-        <div class="score-label">Beispiel: Lead Score für einen IT-Dienstleister</div>
+        <div class="score-label">Beispiel: Lead Score für eine Marketing-Agentur, die SaaS-Kunden sucht</div>
       </div>
       <div class="score-table">
         <div class="score-row">
-          <span class="score-signal">Passt zum ICP (Branche, Größe, Region)</span>
+          <span class="score-signal">SaaS-Firma, 20–200 Mitarbeiter, DACH-Region</span>
           <span class="score-points">+30 Punkte</span>
         </div>
         <div class="score-row">
-          <span class="score-signal">Stellenanzeige: sucht DevOps Engineer</span>
+          <span class="score-signal">Stellenanzeige: sucht Marketing Manager</span>
           <span class="score-points">+20 Punkte</span>
         </div>
         <div class="score-row">
-          <span class="score-signal">Finanzierungsrunde in den letzten 6 Monaten</span>
+          <span class="score-signal">Frische Finanzierung in den letzten 6 Monaten</span>
           <span class="score-points">+15 Punkte</span>
         </div>
         <div class="score-row">
-          <span class="score-signal">Neuer CTO seit 2 Monaten</span>
+          <span class="score-signal">Neuer Head of Marketing seit 2 Monaten</span>
           <span class="score-points">+15 Punkte</span>
         </div>
         <div class="score-row">
-          <span class="score-signal">Nutzt Wettbewerber-Technologie</span>
+          <span class="score-signal">Webseite zeigt: keine aktive Paid-Ads-Strategie</span>
           <span class="score-points">+10 Punkte</span>
         </div>
         <div class="score-row">
-          <span class="score-signal">Entscheider auf LinkedIn identifiziert</span>
+          <span class="score-signal">Entscheider auf LinkedIn gefunden</span>
           <span class="score-points">+10 Punkte</span>
         </div>
         <div class="score-row score-total">
@@ -174,15 +206,15 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
 <!-- DSGVO -->
 <section class="alt">
   <div class="ls-wrap">
-    <h2 class="ls-h2 r">DSGVO-konform. Ohne Kompromisse.</h2>
+    <h2 class="ls-h2 r">Datenschutz: So arbeiten wir</h2>
     <div class="gdpr-grid r">
       <div class="gdpr-card">
         <h4>Nur öffentliche Daten</h4>
         <p>Wir arbeiten ausschließlich mit öffentlich zugänglichen Informationen — Unternehmenswebseiten, Handelsregister, LinkedIn-Profile, Stellenportale. Keine gekauften Privatdaten.</p>
       </div>
       <div class="gdpr-card">
-        <h4>Berechtigtes Interesse</h4>
-        <p>Die Ansprache von Geschäftskontakten im B2B-Kontext ist über Art. 6 Abs. 1 lit. f DSGVO abgedeckt — berechtigtes Interesse an Direktwerbung, wie vom EuGH bestätigt.</p>
+        <h4>Rechtliche Grundlage</h4>
+        <p>Geschäftskontakte im B2B-Bereich dürfen über das berechtigte Interesse (Art. 6 DSGVO) angesprochen werden. Das gilt für Telefon, Post und E-Mail gleichermaßen.</p>
       </div>
       <div class="gdpr-card">
         <h4>Opt-Out jederzeit</h4>
@@ -199,29 +231,29 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
 <!-- USE CASES -->
 <section>
   <div class="ls-wrap">
-    <h2 class="ls-h2 r">Fertige Listen für jeden Kanal</h2>
-    <p class="ls-lead r">Egal ob Ihr Team am Telefon sitzt, Briefe verschickt oder E-Mail-Sequenzen fährt — wir liefern die Daten im richtigen Format.</p>
+    <h2 class="ls-h2 r">Fertige Listen — egal wie Sie akquirieren</h2>
+    <p class="ls-lead r">Ob Sie anrufen, Briefe verschicken oder E-Mails schreiben: Wir liefern die Daten so, wie Sie sie brauchen.</p>
     <div class="channel-grid r">
       <div class="channel-card">
         <div class="channel-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.03z"/></svg>
         </div>
         <h4>Telefonische Kaltakquise</h4>
-        <p>Direkte Durchwahlen, verifizierte Ansprechpartner mit Entscheidungskompetenz. Priorisiert nach Score — Ihr Team startet mit den heißesten Leads.</p>
+        <p>Direkte Durchwahlen und der Name der Person, die entscheidet. Sortiert — die besten Kontakte stehen oben.</p>
       </div>
       <div class="channel-card">
         <div class="channel-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
-        <h4>E-Mail-Outbound</h4>
-        <p>Verifizierte geschäftliche E-Mail-Adressen mit Bounce-Prüfung. Angereichert mit Kontext für personalisierte Ansprache.</p>
+        <h4>E-Mail</h4>
+        <p>Geprüfte geschäftliche E-Mail-Adressen. Dazu Kontext zur Firma, damit Sie keine Standardmail schreiben müssen.</p>
       </div>
       <div class="channel-card">
         <div class="channel-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8h20"/><path d="M8 4v16"/></svg>
         </div>
         <h4>Direktmailing</h4>
-        <p>Vollständige Postadressen mit Ansprechpartner. Für physische Mailings, die auf dem Schreibtisch des Entscheiders landen — nicht im Spam-Ordner.</p>
+        <p>Vollständige Postadressen mit Ansprechpartner. Ein Brief auf dem Schreibtisch wird gelesen — im Gegensatz zu den meisten E-Mails.</p>
       </div>
     </div>
   </div>
@@ -230,13 +262,13 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
 <!-- PRICING -->
 <section class="alt">
   <div class="ls-wrap">
-    <h2 class="ls-h2 r">Pricing: Sie zahlen nur für Top-Kontakte</h2>
-    <p class="ls-lead r">Kein Retainer. Keine Fixkosten. Sie bezahlen pro geliefertem, qualifiziertem Kontakt — und entscheiden vorher, welche Kriterien ein „Top-Kontakt" erfüllen muss.</p>
+    <h2 class="ls-h2 r">Was es kostet</h2>
+    <p class="ls-lead r">Sie zahlen pro Kontakt. Keine monatlichen Fixkosten. Vorher legen wir gemeinsam fest, was ein guter Kontakt für Sie ist — nur die werden geliefert und berechnet.</p>
     <div class="pricing-grid r">
       <div class="price-card">
         <div class="price-label">Recherche &amp; Scoring</div>
-        <div class="price-amount">ab 3,50 €</div>
-        <div class="price-unit">pro qualifiziertem Lead</div>
+        <div class="price-amount">0,35 €</div>
+        <div class="price-unit">pro Kontakt</div>
         <ul class="price-includes">
           <li>Firmenrecherche nach Ihrem ICP</li>
           <li>Anreicherung mit Entscheider-Daten</li>
@@ -248,8 +280,8 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
       </div>
       <div class="price-card price-card-alt">
         <div class="price-label">Premium: mit Kontaktdaten</div>
-        <div class="price-amount">ab 5,50 €</div>
-        <div class="price-unit">pro qualifiziertem Lead</div>
+        <div class="price-amount">0,50 €</div>
+        <div class="price-unit">pro Kontakt</div>
         <ul class="price-includes">
           <li>Alles aus Recherche &amp; Scoring</li>
           <li>Verifizierte E-Mail-Adresse</li>
