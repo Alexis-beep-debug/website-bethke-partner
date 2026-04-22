@@ -590,7 +590,7 @@ const structuredData = {
 
 </BaseLayout>
 
-<style>
+<style is:global>
 /* ─── HERO ─── */
 .ls-hero {
   min-height: 85vh;
@@ -651,7 +651,7 @@ const structuredData = {
 /* ─── LEAD CARD VISUAL ─── */
 .lead-card-visual {
   position: absolute;
-  right: 64px;
+  right: 10%;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
@@ -895,14 +895,16 @@ const structuredData = {
   to { width: var(--fill-width, 92%); }
 }
 
-/* Hero needs to be relative + flex for card positioning */
+/* Hero layout */
 .ls-hero {
   display: flex;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 .ls-inner {
-  max-width: 520px;
+  max-width: 500px;
+  flex-shrink: 0;
 }
 
 /* ─── COMMON ─── */
@@ -1500,7 +1502,7 @@ const structuredData = {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1100px) {
-  .lead-card-visual { right: 32px; }
+  .lead-card-visual { right: 5%; }
   .lc { width: 290px; }
   .lc-header { padding: 16px 20px; }
   .lc-section { padding: 12px 20px; }
