@@ -59,71 +59,139 @@ const structuredData = {
     </div>
   </div>
 
-  <!-- ANIMATED LEAD CARD -->
+  <!-- ANIMATED LEAD CARD FEED -->
   <div class="lead-card-visual">
-    <div class="lc">
-      <!-- Header -->
-      <div class="lc-header">
-        <div class="lc-avatar">DT</div>
-        <div class="lc-company">
-          <div class="lc-name anim-1">datacraft GmbH</div>
-          <div class="lc-meta anim-2">IT-Dienstleister · 45 Mitarbeiter · München</div>
-        </div>
-        <div class="lc-badge anim-badge">A</div>
+    <div class="lc-feed">
+      <!-- Toast notification -->
+      <div class="lc-toast" id="lcToast">
+        <div class="lc-toast-dot"></div>
+        Neuer Lead
       </div>
 
-      <!-- Contact -->
-      <div class="lc-section anim-3">
-        <div class="lc-section-label">Ansprechpartner</div>
-        <div class="lc-contact-name">Thomas Meier</div>
-        <div class="lc-contact-role">Geschäftsführer</div>
-      </div>
-
-      <!-- Contact Details -->
-      <div class="lc-details">
-        <div class="lc-detail anim-4">
-          <span class="lc-detail-icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.03z"/></svg>
-          </span>
-          +49 176 ••• •• 41
-        </div>
-        <div class="lc-detail anim-5">
-          <span class="lc-detail-icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </span>
-          t.meier@datacraft.de
-        </div>
-        <div class="lc-detail anim-6">
-          <span class="lc-detail-icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </span>
-          linkedin.com/in/tmeier
-        </div>
-      </div>
-
-      <!-- Trigger Signals -->
-      <div class="lc-section anim-7">
-        <div class="lc-section-label">Trigger-Signale</div>
-        <div class="lc-triggers">
-          <div class="lc-trigger anim-t1"><span class="lc-trigger-check">✓</span> Sucht Senior DevOps Engineer</div>
-          <div class="lc-trigger anim-t2"><span class="lc-trigger-check">✓</span> Funding-Runde Q1 2026</div>
-          <div class="lc-trigger anim-t3"><span class="lc-trigger-check">✓</span> Neuer CTO seit Februar</div>
-        </div>
-      </div>
-
-      <!-- Score Bar -->
-      <div class="lc-score-section anim-8">
-        <div class="lc-section-label">Lead Score</div>
-        <div class="lc-score-bar-bg">
-          <div class="lc-score-bar"></div>
-        </div>
-        <div class="lc-score-row">
-          <span class="lc-score-val">92 / 100</span>
-          <span class="lc-icp-tag">ICP Fit</span>
-        </div>
+      <!-- Card container -->
+      <div class="lc-stack" id="lcStack">
+        <!-- Cards get injected by JS -->
       </div>
     </div>
   </div>
+
+  <script is:inline>
+  (function() {
+    const leads = [
+      {
+        initials: 'DT', name: 'datacraft GmbH', meta: 'IT-Dienstleister · 45 MA · München',
+        contact: 'Thomas Meier', role: 'Geschäftsführer',
+        phone: '+49 176 ••• •• 41', email: 't.meier@datacraft.de', linkedin: 'linkedin.com/in/tmeier',
+        triggers: ['Sucht Senior DevOps Engineer', 'Funding-Runde Q1 2026', 'Neuer CTO seit Februar'],
+        score: 92, grade: 'A'
+      },
+      {
+        initials: 'NV', name: 'Noviq Solutions', meta: 'SaaS · 28 MA · Berlin',
+        contact: 'Laura Engel', role: 'Head of Marketing',
+        phone: '+49 151 ••• •• 88', email: 'l.engel@noviq.io', linkedin: 'linkedin.com/in/lengel',
+        triggers: ['Sucht Marketing Manager', 'Serie-A abgeschlossen', 'Neue Website gelauncht'],
+        score: 87, grade: 'A'
+      },
+      {
+        initials: 'CP', name: 'CloudPilot AG', meta: 'Cloud Services · 120 MA · Hamburg',
+        contact: 'Stefan Braun', role: 'VP Sales',
+        phone: '+49 170 ••• •• 23', email: 's.braun@cloudpilot.de', linkedin: 'linkedin.com/in/sbraun',
+        triggers: ['3 Sales-Stellen offen', 'Neuer Standort Frankfurt', 'CRM-Migration auf HubSpot'],
+        score: 95, grade: 'A'
+      },
+      {
+        initials: 'FM', name: 'finmatch GmbH', meta: 'FinTech · 35 MA · Stuttgart',
+        contact: 'Anna Richter', role: 'Geschäftsführerin',
+        phone: '+49 162 ••• •• 67', email: 'a.richter@finmatch.de', linkedin: 'linkedin.com/in/arichter',
+        triggers: ['Sucht Head of Growth', 'Seed+ Runde Q4 2025', 'Wettbewerber-Wechsel bei Kunden'],
+        score: 84, grade: 'A'
+      }
+    ];
+
+    const stack = document.getElementById('lcStack');
+    const toast = document.getElementById('lcToast');
+    if (!stack || !toast) return;
+
+    let index = 0;
+
+    function buildCard(lead) {
+      return `
+        <div class="lc lc-enter">
+          <div class="lc-header">
+            <div class="lc-avatar">${lead.initials}</div>
+            <div class="lc-company">
+              <div class="lc-name">${lead.name}</div>
+              <div class="lc-meta">${lead.meta}</div>
+            </div>
+            <div class="lc-badge lc-badge-pop">${lead.grade}</div>
+          </div>
+          <div class="lc-section">
+            <div class="lc-section-label">Ansprechpartner</div>
+            <div class="lc-contact-name">${lead.contact}</div>
+            <div class="lc-contact-role">${lead.role}</div>
+          </div>
+          <div class="lc-details">
+            <div class="lc-detail">
+              <span class="lc-detail-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.03z"/></svg></span>
+              ${lead.phone}
+            </div>
+            <div class="lc-detail">
+              <span class="lc-detail-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+              ${lead.email}
+            </div>
+            <div class="lc-detail">
+              <span class="lc-detail-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+              ${lead.linkedin}
+            </div>
+          </div>
+          <div class="lc-section">
+            <div class="lc-section-label">Trigger-Signale</div>
+            <div class="lc-triggers">
+              ${lead.triggers.map(t => `<div class="lc-trigger"><span class="lc-trigger-check">✓</span> ${t}</div>`).join('')}
+            </div>
+          </div>
+          <div class="lc-score-section">
+            <div class="lc-section-label">Lead Score</div>
+            <div class="lc-score-bar-bg">
+              <div class="lc-score-bar" style="animation:lcFill 1s 0.3s cubic-bezier(0.16,1,0.3,1) forwards; --fill-width:${lead.score}%"></div>
+            </div>
+            <div class="lc-score-row">
+              <span class="lc-score-val">${lead.score} / 100</span>
+              <span class="lc-icp-tag">ICP Fit</span>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    function showCard() {
+      const lead = leads[index % leads.length];
+
+      // Show toast
+      toast.classList.remove('lc-toast-show');
+      void toast.offsetWidth;
+      toast.classList.add('lc-toast-show');
+
+      // Remove old card after animation
+      const oldCard = stack.querySelector('.lc');
+      if (oldCard) {
+        oldCard.classList.add('lc-exit');
+        setTimeout(() => oldCard.remove(), 500);
+      }
+
+      // Add new card
+      setTimeout(() => {
+        stack.insertAdjacentHTML('beforeend', buildCard(lead));
+      }, 300);
+
+      index++;
+    }
+
+    // Initial card after page load
+    setTimeout(showCard, 800);
+    // Loop every 5 seconds
+    setInterval(showCard, 5000);
+  })();
+  </script>
 </div>
 
 <!-- FÜR WEN -->
@@ -556,16 +624,17 @@ const structuredData = {
 }
 .ls-tag-line { display: block; width: 28px; height: 1px; background: var(--slate-2); }
 .ls-h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(44px, 6vw, 80px);
-  font-weight: 300;
-  line-height: 1.05;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(40px, 5.5vw, 68px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: var(--navy);
   margin-bottom: 32px;
   opacity: 0;
   animation: fadeUp 0.9s 0.2s cubic-bezier(0.16,1,0.3,1) forwards;
 }
-.ls-h1 em { font-style: italic; color: var(--blue); }
+.ls-h1 em { font-style: normal; color: var(--blue); font-weight: 300; }
 .ls-sub {
   font-size: 16px;
   color: var(--text-2);
@@ -749,47 +818,73 @@ const structuredData = {
   border-radius: 2px;
 }
 
-/* ─── LEAD CARD ANIMATIONS ─── */
-/* Staggered fade in */
-.anim-1, .anim-2, .anim-3, .anim-4, .anim-5, .anim-6, .anim-7, .anim-8 {
+/* ─── LEAD CARD FEED ─── */
+.lc-feed { position: relative; }
+.lc-stack { position: relative; }
+
+/* Toast notification */
+.lc-toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  margin-bottom: 12px;
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(8px);
+  transition: none;
 }
-.anim-1 { animation: lcReveal 0.5s 0.6s cubic-bezier(0.16,1,0.3,1) forwards; }
-.anim-2 { animation: lcReveal 0.5s 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
-.anim-3 { animation: lcReveal 0.5s 1.2s cubic-bezier(0.16,1,0.3,1) forwards; }
-.anim-4 { animation: lcReveal 0.5s 1.5s cubic-bezier(0.16,1,0.3,1) forwards; }
-.anim-5 { animation: lcReveal 0.5s 1.7s cubic-bezier(0.16,1,0.3,1) forwards; }
-.anim-6 { animation: lcReveal 0.5s 1.9s cubic-bezier(0.16,1,0.3,1) forwards; }
-.anim-7 { animation: lcReveal 0.5s 2.3s cubic-bezier(0.16,1,0.3,1) forwards; }
-.anim-8 { animation: lcReveal 0.5s 3.2s cubic-bezier(0.16,1,0.3,1) forwards; }
-
-/* Trigger signals pop in one by one */
-.anim-t1, .anim-t2, .anim-t3 {
-  opacity: 0;
-  transform: translateX(-8px);
+.lc-toast-dot {
+  width: 6px; height: 6px;
+  background: #4ADE80;
+  border-radius: 50%;
+  animation: toastPulse 1.5s infinite;
 }
-.anim-t1 { animation: lcSlide 0.4s 2.5s cubic-bezier(0.16,1,0.3,1) forwards; }
-.anim-t2 { animation: lcSlide 0.4s 2.7s cubic-bezier(0.16,1,0.3,1) forwards; }
-.anim-t3 { animation: lcSlide 0.4s 2.9s cubic-bezier(0.16,1,0.3,1) forwards; }
-
-/* Badge pops */
-.anim-badge {
-  animation: lcBadge 0.5s 3.6s cubic-bezier(0.34,1.56,0.64,1) forwards;
+.lc-toast-show {
+  animation: toastIn 0.4s cubic-bezier(0.16,1,0.3,1) forwards;
 }
 
-/* Score bar fills */
+/* Card enter/exit */
+.lc-enter {
+  animation: cardIn 0.6s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.lc-exit {
+  animation: cardOut 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+}
+
+/* Badge pop on new card */
+.lc-badge-pop {
+  transform: translateY(-50%) scale(0);
+  animation: lcBadge 0.5s 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards;
+}
+
+/* Score bar fill on new card */
 .lc-score-bar {
-  animation: lcFill 1.2s 3.4s cubic-bezier(0.16,1,0.3,1) forwards;
+  width: 0;
 }
 
-@keyframes lcReveal {
-  from { opacity: 0; transform: translateY(10px); }
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(-20px) scale(0.97); }
   to { opacity: 1; transform: none; }
 }
-@keyframes lcSlide {
-  from { opacity: 0; transform: translateX(-8px); }
+@keyframes cardOut {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: translateY(20px) scale(0.97); }
+}
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: none; }
+}
+@keyframes toastPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
 @keyframes lcBadge {
   from { transform: translateY(-50%) scale(0); }
@@ -797,7 +892,7 @@ const structuredData = {
 }
 @keyframes lcFill {
   from { width: 0; }
-  to { width: 92%; }
+  to { width: var(--fill-width, 92%); }
 }
 
 /* Hero needs to be relative + flex for card positioning */
@@ -813,12 +908,13 @@ const structuredData = {
 /* ─── COMMON ─── */
 .ls-wrap { max-width: 900px; margin: 0 auto; }
 .ls-h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(30px, 4vw, 44px);
-  font-weight: 300;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
   color: var(--navy);
   margin-bottom: 48px;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 .ls-lead {
   font-size: 15px;
@@ -914,9 +1010,9 @@ const structuredData = {
 }
 .lever-good .lever-label { color: var(--blue-mid); }
 .lever-stat {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
-  font-weight: 300;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 44px;
+  font-weight: 500;
   color: var(--muted);
   line-height: 1;
   margin-bottom: 12px;
@@ -1157,11 +1253,12 @@ const structuredData = {
   padding: 28px 40px 0;
 }
 .case-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(24px, 3vw, 32px);
-  font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
   color: var(--navy);
-  line-height: 1.2;
+  line-height: 1.3;
   padding: 16px 40px 32px;
 }
 .case-grid {
@@ -1235,9 +1332,10 @@ const structuredData = {
   padding: 40px;
 }
 .price-test-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
-  font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
   color: var(--navy);
   margin-bottom: 16px;
 }
@@ -1294,12 +1392,12 @@ const structuredData = {
   margin-bottom: 16px;
 }
 .price-amount {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
-  font-weight: 300;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 42px;
+  font-weight: 500;
   color: var(--navy);
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 .price-amount sup {
   font-size: 16px;
@@ -1373,9 +1471,10 @@ const structuredData = {
 }
 .ls-cta-inner { max-width: 600px; margin: 0 auto; }
 .ls-cta-h {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(36px, 5vw, 56px);
-  font-weight: 300;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
   color: var(--white);
   margin-bottom: 20px;
 }
