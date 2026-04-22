@@ -45,8 +45,8 @@ const structuredData = {
 <div class="ls-hero">
   <div class="ls-inner">
     <div class="ls-tag"><span class="ls-tag-line"></span> Leadrecherche &amp; Scoring</div>
-    <h1 class="ls-h1">Bessere Listen.<br><em>Bessere Gespräche.</em></h1>
-    <p class="ls-sub">Für Marketing-Agenturen, die neue Kunden gewinnen wollen: Wir suchen die Firmen, die zu Ihrem Angebot passen, finden den richtigen Ansprechpartner und prüfen, ob es gerade einen Grund gibt, sie anzurufen. Sie bekommen eine fertige Liste — für Telefon, Post oder E-Mail.</p>
+    <h1 class="ls-h1">70 % weniger Kosten.<br><em>Bessere Kontakte.</em></h1>
+    <p class="ls-sub">Statt 1,50 € pro Kontakt zahlen Sie 0,35–0,50 € — und bekommen bessere Daten als vorher. Für Marketing-Agenturen, die neue Kunden gewinnen wollen: Wir suchen die Firmen, die zu Ihrem Angebot passen, finden den richtigen Ansprechpartner und prüfen, ob es gerade einen Grund gibt, sie anzurufen.</p>
     <div class="ls-actions">
       <a href={calUrl} target="_blank" rel="noopener" class="btn-primary">Erstgespräch vereinbaren</a>
     </div>
@@ -260,8 +260,33 @@ const structuredData = {
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- REFERENZ -->
 <section class="alt">
+  <div class="ls-wrap">
+    <div class="case-card r">
+      <div class="case-label">Aus der Praxis</div>
+      <h3 class="case-title">Von zwei Vollzeitkräften zu null — bei besseren Ergebnissen</h3>
+      <div class="case-grid">
+        <div class="case-before">
+          <div class="case-phase">Vorher</div>
+          <p>Ein B2B-Unternehmen hatte zwei Mitarbeiter eingestellt, die den ganzen Tag nichts anderes gemacht haben, als Kontaktdaten zu recherchieren und Listen zu bauen. Zwei Gehälter, Sozialabgaben, Arbeitsplätze — nur damit das Vertriebsteam Leute zum Anrufen hat.</p>
+          <div class="case-cost">~8.000 € <span>/ Monat Personalkosten</span></div>
+        </div>
+        <div class="case-after">
+          <div class="case-phase case-phase-good">Nachher</div>
+          <p>Wir haben die Recherche komplett übernommen. Automatisiert, mit Scoring und Anreicherung. Die zwei Stellen wurden nicht nachbesetzt. Das Vertriebsteam bekommt jetzt bessere Listen als vorher — und führt deutlich mehr gute Gespräche.</p>
+          <div class="case-cost case-cost-good">~1.500 € <span>/ Monat für dieselbe Menge Kontakte</span></div>
+        </div>
+      </div>
+      <div class="case-result">
+        <span class="case-saving">Über 80 % Kosteneinsparung</span> — bei höherer Datenqualität und mehr Terminen pro 100 Anrufe.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
   <div class="ls-wrap">
     <h2 class="ls-h2 r">Was es kostet</h2>
     <p class="ls-lead r">Sie zahlen pro Kontakt. Keine monatlichen Fixkosten. Vorher legen wir gemeinsam fest, was ein guter Kontakt für Sie ist — nur die werden geliefert und berechnet.</p>
@@ -652,6 +677,81 @@ const structuredData = {
   line-height: 1.75;
 }
 
+/* ─── CASE STUDY ─── */
+.case-card {
+  border: 1px solid var(--border);
+  background: var(--white);
+}
+.case-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue-mid);
+  padding: 28px 40px 0;
+}
+.case-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.2;
+  padding: 16px 40px 32px;
+}
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.case-before, .case-after {
+  padding: 32px 40px;
+  background: var(--white);
+}
+.case-before { background: var(--bg); }
+.case-phase {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.case-phase-good { color: var(--blue-mid); }
+.case-before p, .case-after p {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+.case-cost {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1;
+}
+.case-cost span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--muted);
+}
+.case-cost-good { color: var(--navy); }
+.case-cost-good span { color: var(--text-2); }
+.case-result {
+  padding: 24px 40px;
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+.case-saving {
+  font-weight: 500;
+  color: var(--blue);
+}
+
 /* ─── PRICING ─── */
 .pricing-grid {
   display: grid;
@@ -787,6 +887,11 @@ const structuredData = {
   .pricing-grid { grid-template-columns: 1fr; }
   .gdpr-grid { grid-template-columns: 1fr; }
   .score-tiers { flex-direction: column; gap: 12px; }
+  .case-grid { grid-template-columns: 1fr; }
+  .case-title { font-size: 22px; padding: 16px 24px 24px; }
+  .case-label { padding: 24px 24px 0; }
+  .case-before, .case-after { padding: 24px; }
+  .case-result { padding: 20px 24px; }
   section { padding: 64px 20px; }
   .ls-cta { padding: 64px 20px; }
   .ls-lead { margin-top: -20px; }
