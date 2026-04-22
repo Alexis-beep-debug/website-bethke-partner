@@ -96,15 +96,15 @@ const structuredData = {
   </div>
   <div class="hero-stats">
     <div class="h-stat">
-      <div class="h-stat-val">7 <em>Jahre</em></div>
+      <div class="h-stat-val"><span data-count="7" data-suffix="">0</span> <em>Jahre</em></div>
       <div class="h-stat-label">im B2B-Vertrieb</div>
     </div>
     <div class="h-stat">
-      <div class="h-stat-val">250+ <em></em></div>
+      <div class="h-stat-val"><span data-count="250" data-suffix="+">0</span></div>
       <div class="h-stat-label">Neukunden für<br>unsere Auftraggeber gewonnen</div>
     </div>
     <div class="h-stat">
-      <div class="h-stat-val">3 <em>Wo.</em></div>
+      <div class="h-stat-val"><span data-count="3" data-suffix="">0</span> <em>Wo.</em></div>
       <div class="h-stat-label">Vom Briefing bis<br>zum ersten Outbound</div>
     </div>
   </div>
@@ -581,9 +581,13 @@ section.dark .sec-intro { color: var(--slate-2); }
   padding: 48px 40px;
   position: relative;
   overflow: hidden;
-  transition: background 0.3s;
+  transition: background 0.4s, transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
 }
-.s-card:hover { background: var(--bg); }
+.s-card:hover {
+  background: var(--bg);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(13,27,42,0.06);
+}
 
 .s-card-bar {
   width: 32px; height: 1.5px;
@@ -697,9 +701,13 @@ a.s-card-link:hover .s-card-cta { gap: 14px; color: var(--navy); }
 .usp-cell {
   background: var(--bg);
   padding: 40px 28px;
-  transition: background 0.3s;
+  transition: background 0.4s, transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
 }
-.usp-cell:hover { background: var(--bg-2); }
+.usp-cell:hover {
+  background: var(--bg-2);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(13,27,42,0.06);
+}
 .usp-icon {
   width: 36px; height: 36px;
   margin-bottom: 20px;
@@ -739,10 +747,14 @@ a.s-card-link:hover .s-card-cta { gap: 14px; color: var(--navy); }
   border: 1px solid var(--border);
   background: var(--white);
   padding: 32px 36px;
-  transition: border-color 0.3s, background 0.3s;
+  transition: border-color 0.4s, background 0.4s, transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
 }
 .phase:last-child { margin-bottom: 0; }
-.phase:hover { border-color: var(--border-2); }
+.phase:hover {
+  border-color: var(--border-2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(13,27,42,0.05);
+}
 
 .phase-dot {
   position: absolute;
@@ -1146,9 +1158,13 @@ a.s-card-link:hover .s-card-cta { gap: 14px; color: var(--navy); }
 a.offer-card-link {
   text-decoration: none;
   color: inherit;
-  transition: background 0.3s;
+  transition: background 0.4s, transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
 }
-a.offer-card-link:hover { background: var(--bg); }
+a.offer-card-link:hover {
+  background: var(--bg);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(13,27,42,0.06);
+}
 .offer-tag {
   font-size: 10px;
   font-weight: 500;

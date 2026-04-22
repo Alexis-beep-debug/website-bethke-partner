@@ -120,7 +120,7 @@ const structuredData = {
 <section>
   <div class="ls-wrap">
     <h2 class="ls-h2 r">Was wir für Sie tun</h2>
-    <div class="process-flow r">
+    <div class="process-flow r stagger">
       <div class="pf-step">
         <div class="pf-num">01</div>
         <h3 class="pf-title">Recherche</h3>
@@ -150,7 +150,7 @@ const structuredData = {
   <div class="ls-wrap">
     <h2 class="ls-h2 r">Woran wir erkennen, dass eine Firma gerade passt</h2>
     <p class="ls-lead r">Nicht jede Firma auf einer Liste hat gerade Bedarf. Wir prüfen konkrete Signale, die zeigen, dass sich bei einer Firma etwas tut — und dass Ihr Angebot gerade relevant sein könnte.</p>
-    <div class="trigger-grid r">
+    <div class="trigger-grid r stagger">
       <div class="trigger-card">
         <div class="trigger-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 11h5"/></svg>
@@ -249,7 +249,7 @@ const structuredData = {
 <section class="alt">
   <div class="ls-wrap">
     <h2 class="ls-h2 r">Datenschutz: So arbeiten wir</h2>
-    <div class="gdpr-grid r">
+    <div class="gdpr-grid r stagger">
       <div class="gdpr-card">
         <h4>Nur öffentliche Daten</h4>
         <p>Wir arbeiten ausschließlich mit öffentlich zugänglichen Informationen — Unternehmenswebseiten, Handelsregister, LinkedIn-Profile, Stellenportale. Keine gekauften Privatdaten.</p>
@@ -275,7 +275,7 @@ const structuredData = {
   <div class="ls-wrap">
     <h2 class="ls-h2 r">Fertige Listen — egal wie Sie akquirieren</h2>
     <p class="ls-lead r">Ob Sie anrufen, Briefe verschicken oder E-Mails schreiben: Wir liefern die Daten so, wie Sie sie brauchen.</p>
-    <div class="channel-grid r">
+    <div class="channel-grid r stagger">
       <div class="channel-card">
         <div class="channel-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.03z"/></svg>
@@ -574,6 +574,13 @@ const structuredData = {
   color: var(--muted);
   line-height: 1;
   margin-bottom: 12px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1), color 0.4s;
+}
+.lever-stat-in {
+  opacity: 1;
+  transform: none;
 }
 .lever-good .lever-stat { color: var(--navy); }
 .lever-desc {
@@ -598,9 +605,13 @@ const structuredData = {
 .pf-step {
   background: var(--white);
   padding: 36px 28px;
-  transition: background 0.3s;
+  transition: background 0.4s, transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
 }
-.pf-step:hover { background: var(--bg); }
+.pf-step:hover {
+  background: var(--bg);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(13,27,42,0.06);
+}
 .pf-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 28px;
@@ -631,9 +642,13 @@ const structuredData = {
 .trigger-card {
   background: var(--white);
   padding: 36px 28px;
-  transition: background 0.3s;
+  transition: background 0.4s, transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
 }
-.trigger-card:hover { background: var(--bg); }
+.trigger-card:hover {
+  background: var(--bg);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(13,27,42,0.06);
+}
 .trigger-icon {
   color: var(--blue);
   margin-bottom: 20px;
@@ -675,6 +690,13 @@ const structuredData = {
   padding: 16px 32px;
   border-bottom: 1px solid var(--border);
   font-size: 14px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s cubic-bezier(0.16,1,0.3,1), transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.score-row-in {
+  opacity: 1;
+  transform: none;
 }
 .score-row:last-child { border-bottom: none; }
 .score-signal { color: var(--text-2); }
@@ -751,9 +773,13 @@ const structuredData = {
 .channel-card {
   background: var(--white);
   padding: 40px 32px;
-  transition: background 0.3s;
+  transition: background 0.4s, transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
 }
-.channel-card:hover { background: var(--bg); }
+.channel-card:hover {
+  background: var(--bg);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(13,27,42,0.06);
+}
 .channel-icon {
   color: var(--blue);
   margin-bottom: 20px;

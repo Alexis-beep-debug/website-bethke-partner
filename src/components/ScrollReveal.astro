@@ -1,15 +1,153 @@
 <script is:inline>
 (function() {
+  // ─── SCROLL REVEAL ───
   const elements = document.querySelectorAll('.r');
-  if (!elements.length) return;
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        obs.unobserve(e.target);
+  if (elements.length) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    elements.forEach(el => obs.observe(el));
+  }
+
+  // ─── STAGGERED GRID CHILDREN ───
+  // Add .stagger to a grid container, children get sequential delays
+  document.querySelectorAll('.stagger').forEach(grid => {
+    const children = grid.children;
+    for (let i = 0; i < children.length; i++) {
+      children[i].style.transitionDelay = (i * 0.1) + 's';
+    }
+  });
+
+  // ─── COUNTER ANIMATION ───
+  const counters = document.querySelectorAll('[data-count]');
+  if (counters.length) {
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+          counterObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    counters.forEach(el => counterObs.observe(el));
+  }
+
+  function animateCounter(el) {
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
+    const duration = 1800;
+    const start = performance.now();
+
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      // ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(target * eased);
+      el.textContent = prefix + current + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // ─── SCROLL-LINKED TIMELINE LINE ───
+  const timelineLine = document.querySelector('.timeline::before, .timeline-progress');
+  const timeline = document.querySelector('.timeline');
+  if (timeline) {
+    const progressLine = document.createElement('div');
+    progressLine.classList.add('timeline-progress');
+    timeline.prepend(progressLine);
+
+    window.addEventListener('scroll', () => {
+      const rect = timeline.getBoundingClientRect();
+      const timelineTop = rect.top;
+      const timelineHeight = rect.height;
+      const windowHeight = window.innerHeight;
+
+      let progress = 0;
+      if (timelineTop < windowHeight * 0.7) {
+        progress = Math.min(1, (windowHeight * 0.7 - timelineTop) / timelineHeight);
       }
+      progressLine.style.height = (progress * 100) + '%';
+    }, { passive: true });
+  }
+
+  // ─── SCORE TABLE ROW ANIMATION ───
+  const scoreRows = document.querySelectorAll('.score-row');
+  if (scoreRows.length) {
+    const scoreObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          // Animate all rows in sequence
+          scoreRows.forEach((row, i) => {
+            setTimeout(() => {
+              row.classList.add('score-row-in');
+            }, i * 120);
+          });
+          scoreObs.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    scoreObs.observe(scoreRows[0]);
+  }
+
+  // ─── LEVER STAT COUNTER ───
+  const leverStats = document.querySelectorAll('.lever-stat');
+  if (leverStats.length) {
+    const leverObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('lever-stat-in');
+          leverObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    leverStats.forEach(el => leverObs.observe(el));
+  }
+
+  // ─── MAGNETIC BUTTONS ───
+  document.querySelectorAll('.btn-primary, .btn-primary-inv, .btn-nav').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  elements.forEach(el => obs.observe(el));
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+
+  // ─── PARALLAX DOT GRID ───
+  const heroes = document.querySelectorAll('.hero, .ls-hero, .oa-hero');
+  if (heroes.length) {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      heroes.forEach(hero => {
+        const before = hero.style;
+        hero.style.setProperty('--parallax-y', (scrollY * 0.15) + 'px');
+      });
+    }, { passive: true });
+  }
+
+  // ─── NAV HIDE/SHOW ON SCROLL ───
+  let lastScroll = 0;
+  const nav = document.getElementById('nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      const current = window.scrollY;
+      if (current > 100) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+      lastScroll = current;
+    }, { passive: true });
+  }
 })();
 </script>
