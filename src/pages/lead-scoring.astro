@@ -16,17 +16,24 @@ const structuredData = {
   "offers": [
     {
       "@type": "Offer",
-      "name": "Recherche & Scoring",
-      "price": "0.35",
+      "name": "Testpaket",
+      "price": "0.75",
       "priceCurrency": "EUR",
-      "description": "Pro Kontakt — inkl. Firmenrecherche, Anreicherung, Scoring"
+      "description": "500 Kontakte einmalig — ICP und Scoring-Faktoren prüfen"
     },
     {
       "@type": "Offer",
-      "name": "Premium: mit Kontaktdaten",
-      "price": "0.50",
+      "name": "1.000 Kontakte / Monat",
+      "price": "0.55",
       "priceCurrency": "EUR",
-      "description": "Pro Kontakt — inkl. verifizierte E-Mail, Telefon, LinkedIn, Postadresse"
+      "description": "Pro Kontakt — laufende Lieferung mit Scoring und Anreicherung"
+    },
+    {
+      "@type": "Offer",
+      "name": "2.500 Kontakte / Monat",
+      "price": "0.42",
+      "priceCurrency": "EUR",
+      "description": "Pro Kontakt — inkl. priorisiertes Scoring, LinkedIn, Postadresse"
     }
   ]
 };
@@ -330,36 +337,78 @@ const structuredData = {
 <section>
   <div class="ls-wrap">
     <h2 class="ls-h2 r">Was es kostet</h2>
-    <p class="ls-lead r">Sie zahlen pro Kontakt. Keine monatlichen Fixkosten. Vorher legen wir gemeinsam fest, was ein guter Kontakt für Sie ist — nur die werden geliefert und berechnet.</p>
-    <div class="pricing-grid r">
+    <p class="ls-lead r">Wir starten mit einem Testpaket, um ICP und Scoring-Faktoren sauber einzustellen. Danach laufende Lieferung — Mindestlaufzeit 3 Monate, danach monatlich kündbar.</p>
+
+    <!-- TEST -->
+    <div class="price-test r">
+      <div class="price-test-inner">
+        <div class="price-test-left">
+          <div class="price-label">Zum Einstieg</div>
+          <div class="price-test-title">Testpaket</div>
+          <div class="price-amount">0,75 €<sup> / Kontakt</sup></div>
+          <div class="price-test-vol">500 Kontakte · einmalig 375 €</div>
+        </div>
+        <div class="price-test-right">
+          <ul class="price-includes">
+            <li>Gemeinsame Definition Ihres ICP</li>
+            <li>Festlegung der Scoring-Faktoren für Ihren Markt</li>
+            <li>500 recherchierte, angereicherte und gescorete Kontakte</li>
+            <li>Auswertung: Was funktioniert, was wird angepasst</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAKETE -->
+    <div class="pricing-grid r stagger">
       <div class="price-card">
-        <div class="price-label">Recherche &amp; Scoring</div>
-        <div class="price-amount">0,35 €</div>
-        <div class="price-unit">pro Kontakt</div>
+        <div class="price-label">Laufend</div>
+        <div class="price-name">1.000 Kontakte</div>
+        <div class="price-amount">0,55 €</div>
+        <div class="price-unit">pro Kontakt · 550 € / Monat</div>
         <ul class="price-includes">
           <li>Firmenrecherche nach Ihrem ICP</li>
           <li>Anreicherung mit Entscheider-Daten</li>
           <li>Scoring nach Trigger-Signalen</li>
-          <li>Nur A- und B-Leads werden geliefert</li>
+          <li>Verifizierte E-Mail &amp; Telefonnummer</li>
           <li>CSV oder CRM-Import</li>
+          <li>Monatliche Lieferung</li>
+        </ul>
+        <a href={calUrl} target="_blank" rel="noopener" class="btn-primary">Gespräch vereinbaren</a>
+      </div>
+      <div class="price-card price-card-highlight">
+        <div class="price-badge">Beliebteste Option</div>
+        <div class="price-label">Laufend</div>
+        <div class="price-name">2.500 Kontakte</div>
+        <div class="price-amount">0,42 €</div>
+        <div class="price-unit">pro Kontakt · 1.050 € / Monat</div>
+        <ul class="price-includes">
+          <li>Alles aus dem 1.000er-Paket</li>
+          <li>Priorisiertes Scoring (A/B/C-Tiers)</li>
+          <li>LinkedIn-Profil des Entscheiders</li>
+          <li>Postadresse (für Direktmailing)</li>
+          <li>Monatlicher Qualitätsreport</li>
+          <li>Monatliche Lieferung</li>
         </ul>
         <a href={calUrl} target="_blank" rel="noopener" class="btn-primary">Gespräch vereinbaren</a>
       </div>
       <div class="price-card price-card-alt">
-        <div class="price-label">Premium: mit Kontaktdaten</div>
-        <div class="price-amount">0,50 €</div>
-        <div class="price-unit">pro Kontakt</div>
+        <div class="price-label">Individuell</div>
+        <div class="price-name">Ab 5.000 Kontakte</div>
+        <div class="price-amount">Auf Anfrage</div>
+        <div class="price-unit">Volumenpreise ab 5.000 / Monat</div>
         <ul class="price-includes">
-          <li>Alles aus Recherche &amp; Scoring</li>
-          <li>Verifizierte E-Mail-Adresse</li>
-          <li>Direkte Telefonnummer</li>
-          <li>LinkedIn-Profil des Entscheiders</li>
-          <li>Postadresse (für Direktmailing)</li>
+          <li>Alles aus dem 2.500er-Paket</li>
+          <li>Individuelle Scoring-Modelle</li>
+          <li>Dedizierter Ansprechpartner</li>
+          <li>CRM-Integration auf Wunsch</li>
+          <li>Wöchentliche Lieferung möglich</li>
+          <li>Flexible Laufzeiten</li>
         </ul>
         <a href={calUrl} target="_blank" rel="noopener" class="btn-primary">Gespräch vereinbaren</a>
       </div>
     </div>
-    <p class="price-note r">Mindestabnahme zum Testen: 300 Kontakte. Die genauen Konditionen klären wir im Erstgespräch — abhängig von Branche, Zielmarkt und gewünschter Tiefe der Anreicherung.</p>
+    <p class="price-note r">Mindestlaufzeit: 3 Monate. Danach monatlich kündbar. Das Testpaket ist unabhängig und unverbindlich — Sie entscheiden danach, ob Sie weitermachen.</p>
   </div>
 </section>
 
@@ -872,10 +921,39 @@ const structuredData = {
   color: var(--blue);
 }
 
-/* ─── PRICING ─── */
-.pricing-grid {
+/* ─── TEST PRICING ─── */
+.price-test {
+  border: 1px solid var(--border);
+  background: var(--white);
+  margin-bottom: 24px;
+}
+.price-test-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+}
+.price-test-left, .price-test-right {
+  background: var(--white);
+  padding: 40px;
+}
+.price-test-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.price-test-vol {
+  font-size: 14px;
+  color: var(--text-2);
+  margin-top: 8px;
+}
+
+/* ─── PRICING GRID ─── */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -883,26 +961,55 @@ const structuredData = {
 }
 .price-card {
   background: var(--white);
-  padding: 48px 40px;
+  padding: 44px 36px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .price-card-alt { background: var(--bg); }
+.price-card-highlight {
+  background: var(--white);
+  border-top: 3px solid var(--blue);
+}
+.price-badge {
+  position: absolute;
+  top: -1px; right: 24px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+}
 .price-label {
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--blue-mid);
+  margin-bottom: 8px;
+}
+.price-name {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--navy);
   margin-bottom: 16px;
 }
 .price-amount {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 52px;
+  font-size: 48px;
   font-weight: 300;
   color: var(--navy);
   line-height: 1;
   letter-spacing: -0.02em;
+}
+.price-amount sup {
+  font-size: 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  color: var(--muted);
+  vertical-align: baseline;
 }
 .price-unit {
   font-size: 12px;
@@ -1006,6 +1113,8 @@ const structuredData = {
   .trigger-grid { grid-template-columns: 1fr; }
   .channel-grid { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
+  .price-test-inner { grid-template-columns: 1fr; }
+  .price-test-left, .price-test-right { padding: 28px 24px; }
   .gdpr-grid { grid-template-columns: 1fr; }
   .score-tiers { flex-direction: column; gap: 12px; }
   .case-grid { grid-template-columns: 1fr; }
