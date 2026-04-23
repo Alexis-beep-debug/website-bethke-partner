@@ -1517,12 +1517,41 @@ const structuredData = {
   .lc { width: 300px; }
 }
 @media (max-width: 900px) {
-  .ls-hero-grid { grid-template-columns: 1fr; }
-  .lead-card-visual { display: none; }
+  .ls-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
   .ls-inner { max-width: 100%; }
+  .lead-card-visual {
+    justify-content: flex-start;
+    overflow-x: hidden;
+  }
+  .lc-feed {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .lc { width: 100% !important; }
+  .lc-stack { min-height: 420px; }
+  .lc-toast {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
 }
 @media (max-width: 768px) {
   .ls-hero { padding: 80px 20px 48px; min-height: auto; }
+  .lc-stack { min-height: 400px; }
+  .lc-header { padding: 16px 18px; }
+  .lc-section { padding: 12px 18px; }
+  .lc-details { padding: 12px 18px; }
+  .lc-score-section { padding: 12px 18px 16px; }
+  .lc-name { font-size: 14px; }
+  .lc-meta { font-size: 10px; }
+  .lc-detail { font-size: 11px; }
+  .lc-trigger { font-size: 11px; }
+  .lc-section-label { font-size: 8px; }
+  .lc-contact-name { font-size: 13px; }
+  .lc-contact-role { font-size: 11px; }
   .ls-h1 { font-size: 36px; }
   .today-grid { grid-template-columns: 1fr; gap: 24px; }
   .lever-grid { flex-direction: column; }
