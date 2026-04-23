@@ -6,7 +6,7 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
 <BaseLayout
   title="Outbound Agent | Bethke & Partner"
   description="Leadrecherche, Qualifizierung und personalisierte E-Mails — ohne manuellen Aufwand. Für SaaS-Unternehmen und IT-Dienstleister."
-  activePage=""
+  activePage="outbound-agent"
 >
 
 <!-- HERO -->
@@ -239,6 +239,7 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
     <h2 class="oa-cta-h">Klingt relevant?</h2>
     <p class="oa-cta-sub">Wir zeigen Ihnen im Demo-Call, wie das System für Ihre Zielgruppe funktioniert.</p>
     <a href={calUrl} target="_blank" rel="noopener" class="btn-primary-inv">Demo-Call buchen</a>
+    <p class="oa-cta-alt">Oder direkt: <a href="mailto:alexis@bethke-und-partner.de">alexis@bethke-und-partner.de</a> · <a href="tel:+4917675726791">+49 176 757 267 91</a></p>
   </div>
 </div>
 
@@ -576,6 +577,22 @@ const calUrl = "https://calendar.app.google/9B63foKnMQroLAKM9";
   transition: background 0.25s, transform 0.2s;
 }
 .btn-primary-inv:hover { background: var(--bg-2); transform: translateY(-2px); }
+
+/* ─── CTA ALT ─── */
+.oa-cta-alt {
+  font-size: 13px;
+  color: var(--slate-2);
+  margin-top: 24px;
+}
+.oa-cta-alt a {
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  transition: border-color 0.2s;
+}
+.oa-cta-alt a:hover {
+  border-color: var(--white);
+}
 
 @media (max-width: 768px) {
   .oa-hero { padding: 80px 20px 48px; min-height: auto; }

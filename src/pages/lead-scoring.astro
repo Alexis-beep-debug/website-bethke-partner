@@ -42,8 +42,8 @@ const structuredData = {
 <BaseLayout
   title="Leadrecherche, Anreicherung & Scoring | Bethke & Partner"
   description="Wir recherchieren, anreichern und scoren Ihre B2B-Zielkontakte — DSGVO-konform. Sie sprechen nur mit Firmen, die gerade Kaufsignale zeigen. Für Kaltakquise, Direktmailing und E-Mail-Outbound."
-  activePage=""
-  ogTitle="B2B Leadrecherche & Scoring — ab 0,35 € pro Kontakt"
+  activePage="lead-scoring"
+  ogTitle="B2B Leadrecherche & Scoring — ab 0,42 € pro Kontakt"
   ogDescription="DSGVO-konforme Leadrecherche mit Scoring nach Kaufsignalen. Für Kaltakquise, Direktmailing und E-Mail-Outbound."
   structuredData={structuredData}
 >
@@ -54,6 +54,7 @@ const structuredData = {
     <div class="ls-inner">
       <div class="ls-tag"><span class="ls-tag-line"></span> Leadrecherche &amp; Scoring</div>
       <h1 class="ls-h1">70 % weniger Kosten.<br><em>Bessere Kontakte.</em></h1>
+      <p class="ls-proof">Praxisbeispiel: 2 Recherche-Stellen ersetzt, 80 % Kosten gespart</p>
       <p class="ls-sub">Für Marketing-Agenturen, die neue Kunden gewinnen wollen: Wir suchen die Firmen, die zu Ihrem Angebot passen, finden den richtigen Ansprechpartner und prüfen, ob es gerade einen Grund gibt, sie anzurufen.</p>
       <div class="ls-actions">
         <a href={calUrl} target="_blank" rel="noopener" class="btn-primary">Erstgespräch vereinbaren</a>
@@ -74,6 +75,7 @@ const structuredData = {
         <!-- Cards get injected by JS -->
       </div>
     </div>
+    <div class="lc-disclaimer">Beispieldaten — echte Leads enthalten vollständige Kontaktdaten</div>
   </div>
 
   <script is:inline>
@@ -154,7 +156,7 @@ const structuredData = {
           <div class="lc-score-section">
             <div class="lc-section-label">Lead Score</div>
             <div class="lc-score-bar-bg">
-              <div class="lc-score-bar" style="animation:lcFill 1s 0.3s cubic-bezier(0.16,1,0.3,1) forwards; --fill-width:${lead.score}%"></div>
+              <div class="lc-score-bar" style="animation:lcFill 1s 0.3s cubic-bezier(0.16,1,0.3,1) forwards"></div>
             </div>
             <div class="lc-score-row">
               <span class="lc-score-val">${lead.score} / 100</span>
@@ -188,10 +190,21 @@ const structuredData = {
       index++;
     }
 
-    // Initial card after page load
-    setTimeout(showCard, 800);
-    // Loop every 5 seconds
-    setInterval(showCard, 5000);
+    // Pause card feed when hero is off-screen
+    let intervalId = null;
+    const feedObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !intervalId) {
+          if (index === 0) setTimeout(showCard, 800);
+          else showCard();
+          intervalId = setInterval(showCard, 5000);
+        } else if (!e.isIntersecting && intervalId) {
+          clearInterval(intervalId);
+          intervalId = null;
+        }
+      });
+    }, { threshold: 0.1 });
+    feedObserver.observe(stack);
   })();
   </script>
   </div>
@@ -588,6 +601,7 @@ const structuredData = {
     <h2 class="ls-cta-h">Bessere Listen. Bessere Gespräche.</h2>
     <p class="ls-cta-sub">Lassen Sie uns im Erstgespräch klären, welche Trigger für Ihren Markt den größten Hebel haben.</p>
     <a href={calUrl} target="_blank" rel="noopener" class="btn-primary-inv">Erstgespräch vereinbaren</a>
+    <p class="ls-cta-alt">Oder direkt: <a href="mailto:alexis@bethke-und-partner.de">alexis@bethke-und-partner.de</a> · <a href="tel:+4917675726791">+49 176 757 267 91</a></p>
   </div>
 </div>
 
@@ -792,9 +806,9 @@ const structuredData = {
 }
 .lc-score-bar {
   height: 100%;
-  width: 0;
   background: linear-gradient(90deg, var(--blue-mid), var(--blue));
   border-radius: 3px;
+  transform-origin: left;
 }
 .lc-score-row {
   display: flex;
@@ -842,7 +856,7 @@ const structuredData = {
 }
 .lc-toast-dot {
   width: 6px; height: 6px;
-  background: #4ADE80;
+  background: var(--success);
   border-radius: 50%;
   animation: toastPulse 1.5s infinite;
 }
@@ -866,12 +880,12 @@ const structuredData = {
 /* Badge pop on new card */
 .lc-badge-pop {
   transform: translateY(-50%) scale(0);
-  animation: lcBadge 0.5s 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards;
+  animation: lcBadge 0.5s 0.6s cubic-bezier(0.16,1,0.3,1) forwards;
 }
 
 /* Score bar fill on new card */
 .lc-score-bar {
-  width: 0;
+  transform: scaleX(0);
 }
 
 @keyframes cardIn {
@@ -896,8 +910,8 @@ const structuredData = {
   to { transform: translateY(-50%) scale(1); }
 }
 @keyframes lcFill {
-  from { width: 0; }
-  to { width: var(--fill-width, 92%); }
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
 /* Hero layout */
@@ -1572,5 +1586,36 @@ const structuredData = {
   section { padding: 64px 20px; }
   .ls-cta { padding: 64px 20px; }
   .ls-lead { margin-top: -20px; }
+}
+
+/* ─── ADDITIONS ─── */
+.lc-disclaimer {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 8px;
+  text-align: center;
+}
+.ls-proof {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--blue-mid);
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.28s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.ls-cta-alt {
+  font-size: 13px;
+  color: var(--slate-2);
+  margin-top: 24px;
+}
+.ls-cta-alt a {
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  transition: border-color 0.2s;
+}
+.ls-cta-alt a:hover {
+  border-color: var(--white);
 }
 </style>
