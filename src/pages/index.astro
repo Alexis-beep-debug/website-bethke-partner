@@ -59,54 +59,63 @@ const structuredData = {
     <!-- Dot grid bg -->
     <div class="hero-dots" aria-hidden="true"></div>
 
-    <!-- Title top -->
+    <!-- Title top (splits left on scroll) -->
     <h2 class="hero-title hero-title-top" id="heroTitleTop">
       Ihre professionelle
     </h2>
 
-    <!-- Center card with stats -->
-    <div class="hero-card" id="heroCard">
-      <div class="hero-card-inner">
-        <div class="hero-card-tag">
-          <span class="hero-tag-line"></span>
-          B2B-Vertriebsagentur
-        </div>
-        <div class="hero-card-headline">
-          Wir akquirieren<br>Neukunden für SaaS,<br>IT &amp; Agenturen.
-        </div>
-        <div class="hero-card-sub">
-          Per Telefon, E-Mail und LinkedIn — oder vollautomatisch über unseren Outbound Agent.
-        </div>
-        <div class="hero-card-stats">
-          <div class="hc-stat">
-            <div class="hc-stat-val"><span data-count="7" data-suffix="">0</span><em>J.</em></div>
-            <div class="hc-stat-label">B2B-Vertrieb</div>
-          </div>
-          <div class="hc-stat">
-            <div class="hc-stat-val"><span data-count="250" data-suffix="+">0</span></div>
-            <div class="hc-stat-label">Termine generiert</div>
-          </div>
-          <div class="hc-stat">
-            <div class="hc-stat-val"><span data-count="3" data-suffix="">0</span><em>Wo.</em></div>
-            <div class="hc-stat-label">bis zum Start</div>
-          </div>
-        </div>
-        <a href="https://calendar.app.google/9B63foKnMQroLAKM9" target="_blank" rel="noopener" class="hero-card-cta">Erstgespräch vereinbaren</a>
-      </div>
-      <!-- Skyline inside card -->
-      <div class="hero-card-skyline" aria-hidden="true">
-        <svg viewBox="0 0 800 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,250 L40,250 L40,200 L55,200 L55,180 L65,180 L65,200 L80,200 L80,250 L120,250 L120,210 L130,210 L130,190 L140,160 L150,190 L160,210 L170,210 L170,250 L200,250 L200,180 L210,180 L210,160 L215,130 L220,110 L225,130 L230,160 L240,160 L240,180 L250,180 L250,250 L280,250 L280,220 L290,220 L290,200 L300,200 L300,170 L305,140 L310,120 L315,100 L320,80 L325,100 L330,120 L335,140 L340,170 L340,200 L350,200 L350,220 L360,220 L360,250 L390,250 L390,190 L395,170 L400,150 L405,130 L410,110 L412,90 L414,70 L416,60 L418,70 L420,90 L422,110 L425,130 L430,150 L435,170 L440,190 L440,250 L470,250 L470,195 L480,195 L480,175 L485,155 L490,140 L495,155 L500,175 L510,175 L510,195 L520,195 L520,250 L550,250 L550,210 L560,210 L560,195 L570,195 L570,180 L580,180 L580,195 L590,195 L590,210 L600,210 L600,250 L630,250 L630,220 L640,220 L640,205 L645,190 L650,175 L655,190 L660,205 L670,205 L670,220 L680,220 L680,250 L710,250 L710,230 L720,230 L720,215 L730,215 L730,230 L740,230 L740,250 L800,250" stroke="rgba(107,133,160,0.18)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="320" cy="76" r="3" fill="rgba(107,133,160,0.15)"/>
-          <circle cx="416" cy="56" r="3" fill="rgba(107,133,160,0.15)"/>
-        </svg>
-      </div>
+    <!-- Skyline — the element that scales to fullscreen -->
+    <div class="hero-skyline-wrap" id="heroSkyline">
+      <svg viewBox="0 0 800 260" fill="none" xmlns="http://www.w3.org/2000/svg" class="skyline-svg">
+        <path d="M0,250 L40,250 L40,200 L55,200 L55,180 L65,180 L65,200 L80,200 L80,250 L120,250 L120,210 L130,210 L130,190 L140,160 L150,190 L160,210 L170,210 L170,250 L200,250 L200,180 L210,180 L210,160 L215,130 L220,110 L225,130 L230,160 L240,160 L240,180 L250,180 L250,250 L280,250 L280,220 L290,220 L290,200 L300,200 L300,170 L305,140 L310,120 L315,100 L320,80 L325,100 L330,120 L335,140 L340,170 L340,200 L350,200 L350,220 L360,220 L360,250 L390,250 L390,190 L395,170 L400,150 L405,130 L410,110 L412,90 L414,70 L416,60 L418,70 L420,90 L422,110 L425,130 L430,150 L435,170 L440,190 L440,250 L470,250 L470,195 L480,195 L480,175 L485,155 L490,140 L495,155 L500,175 L510,175 L510,195 L520,195 L520,250 L550,250 L550,210 L560,210 L560,195 L570,195 L570,180 L580,180 L580,195 L590,195 L590,210 L600,210 L600,250 L630,250 L630,220 L640,220 L640,205 L645,190 L650,175 L655,190 L660,205 L670,205 L670,220 L680,220 L680,250 L710,250 L710,230 L720,230 L720,215 L730,215 L730,230 L740,230 L740,250 L800,250" stroke="rgba(107,133,160,0.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Building windows / dots -->
+        <circle cx="320" cy="76" r="3" fill="rgba(107,133,160,0.25)"/>
+        <circle cx="416" cy="56" r="3" fill="rgba(107,133,160,0.25)"/>
+        <line x1="320" y1="50" x2="320" y2="70" stroke="rgba(107,133,160,0.2)" stroke-width="0.8"/>
+        <line x1="416" y1="30" x2="416" y2="50" stroke="rgba(107,133,160,0.2)" stroke-width="0.8"/>
+        <line x1="413" y1="30" x2="419" y2="30" stroke="rgba(107,133,160,0.2)" stroke-width="0.8"/>
+        <!-- Extra detail buildings -->
+        <rect x="308" y="85" width="24" height="165" fill="none" stroke="rgba(107,133,160,0.08)" stroke-width="0.5"/>
+        <rect x="404" y="65" width="24" height="185" fill="none" stroke="rgba(107,133,160,0.08)" stroke-width="0.5"/>
+        <rect x="215" y="115" width="20" height="135" fill="none" stroke="rgba(107,133,160,0.06)" stroke-width="0.5"/>
+      </svg>
     </div>
 
-    <!-- Title bottom -->
+    <!-- Title bottom (splits right on scroll) -->
     <h2 class="hero-title hero-title-bottom" id="heroTitleBottom">
       <em>Vertriebsagentur</em> <span class="light">aus Nürnberg.</span>
     </h2>
+
+    <!-- Hero content that fades in after scroll resets -->
+    <div class="hero-content-overlay" id="heroContent">
+      <div class="hero-tag">
+        <span class="hero-tag-line"></span>
+        B2B-Vertriebsagentur · SaaS · IT-Dienstleister
+      </div>
+      <p class="hero-sub">
+        Wir akquirieren Neukunden für SaaS-Unternehmen und IT-Dienstleister — per Telefon, E-Mail und LinkedIn oder vollautomatisch über unseren Outbound Agent.
+      </p>
+      <div class="hero-actions">
+        <a href="https://calendar.app.google/9B63foKnMQroLAKM9" target="_blank" rel="noopener" class="btn-primary">Erstgespräch vereinbaren</a>
+        <a href="#leistungen" class="btn-text">Leistungen ansehen <span>→</span></a>
+      </div>
+    </div>
+
+    <!-- Stats bar at bottom -->
+    <div class="hero-stats" id="heroStats">
+      <div class="h-stat">
+        <div class="h-stat-val"><span data-count="7" data-suffix="">0</span> <em>Jahre</em></div>
+        <div class="h-stat-label">im B2B-Vertrieb</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-val"><span data-count="250" data-suffix="+">0</span></div>
+        <div class="h-stat-label">qualifizierte Termine<br>für unsere Auftraggeber</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-val"><span data-count="3" data-suffix="">0</span> <em>Wo.</em></div>
+        <div class="h-stat-label">Vom Briefing bis<br>zum ersten Outbound</div>
+      </div>
+    </div>
 
     <!-- Scroll hint -->
     <div class="hero-scroll-hint" id="heroScrollHint">
@@ -121,32 +130,34 @@ const structuredData = {
   gsap.registerPlugin(ScrollTrigger);
 
   const section = document.getElementById('heroScroll');
-  const card = document.getElementById('heroCard');
+  const skyline = document.getElementById('heroSkyline');
   const titleTop = document.getElementById('heroTitleTop');
   const titleBottom = document.getElementById('heroTitleBottom');
+  const heroContent = document.getElementById('heroContent');
+  const heroStats = document.getElementById('heroStats');
   const scrollHint = document.getElementById('heroScrollHint');
 
-  if (section && card && titleTop && titleBottom) {
+  if (section && skyline && titleTop && titleBottom && heroContent && heroStats) {
     const isMobile = () => window.innerWidth < 768;
-    const startScale = () => isMobile() ? 0.85 : 0.6;
 
+    // Calculate how much to scale skyline to fill viewport
     const immerseScale = () => {
       const vw = window.innerWidth;
       const vh = window.innerHeight;
-      const cardW = Math.min(vw * 0.88, 680);
-      const cardH = Math.min(vh * 0.56, 480);
-      if (cardW <= 0 || cardH <= 0) return 2;
-      return Math.max(vw / cardW, vh / cardH) * 1.08;
+      const skyW = Math.min(vw * 0.7, 800);
+      const skyH = skyW * (260 / 800);
+      return Math.max(vw / skyW, vh / skyH) * 1.1;
     };
 
     // Initial state
-    gsap.set(card, { scale: startScale(), transformOrigin: '50% 50%' });
+    gsap.set(heroContent, { opacity: 0, y: 20 });
+    gsap.set(heroStats, { opacity: 0, y: 20 });
 
     // Entry animation
     const entry = gsap.timeline({ delay: 0.2 });
     entry.from(titleTop, { opacity: 0, y: 40, duration: 1, ease: 'expo.out' }, 0);
+    entry.from(skyline, { opacity: 0, scale: 0.9, duration: 1.4, ease: 'power3.out' }, 0.15);
     entry.from(titleBottom, { opacity: 0, y: -40, duration: 1, ease: 'expo.out' }, 0.12);
-    entry.from(card, { opacity: 0, scale: startScale() * 0.9, duration: 1.2, ease: 'power3.out' }, 0.25);
     entry.from(scrollHint, { opacity: 0, duration: 0.8 }, 1);
 
     // Scroll choreography
@@ -160,8 +171,7 @@ const structuredData = {
       }
     });
 
-    // Phase 1 (0–0.15): Card scales to 1, titles start splitting
-    master.to(card, { scale: 1, ease: 'power2.out', duration: 0.15 }, 0);
+    // Phase 1 (0–0.15): Titles split, skyline starts growing
     master.to(scrollHint, { opacity: 0, duration: 0.05 }, 0);
     master.to(titleTop, {
       x: () => isMobile() ? '-70vw' : '-55vw',
@@ -175,21 +185,27 @@ const structuredData = {
       ease: 'power2.inOut',
       duration: 0.15,
     }, 0);
+    master.to(skyline, { scale: 1.2, ease: 'power2.out', duration: 0.15 }, 0);
 
-    // Phase 2 (0.15–0.65): Card scales to immersive fullscreen, titles fade
-    master.to(card, {
+    // Phase 2 (0.15–0.55): Skyline scales to immersive fullscreen, titles gone
+    master.to(skyline, {
       scale: immerseScale,
+      opacity: 0.6,
       ease: 'power2.in',
-      duration: 0.5,
+      duration: 0.4,
     }, 0.15);
-    master.to(titleTop, { opacity: 0, ease: 'power1.in', duration: 0.15 }, 0.15);
-    master.to(titleBottom, { opacity: 0, ease: 'power1.in', duration: 0.15 }, 0.15);
+    master.to(titleTop, { opacity: 0, ease: 'power1.in', duration: 0.12 }, 0.15);
+    master.to(titleBottom, { opacity: 0, ease: 'power1.in', duration: 0.12 }, 0.15);
 
-    // Phase 3 (0.65–0.78): Hold immersive
-    // (implicit — no changes)
+    // Phase 3 (0.55–0.7): Skyline fades, content appears
+    master.to(skyline, { opacity: 0.08, ease: 'power2.out', duration: 0.15 }, 0.55);
+    master.to(heroContent, { opacity: 1, y: 0, ease: 'power2.out', duration: 0.15 }, 0.58);
+    master.to(heroStats, { opacity: 1, y: 0, ease: 'power2.out', duration: 0.15 }, 0.62);
 
-    // Phase 4 (0.78–1.0): Card scales back, titles return
-    master.to(card, { scale: startScale, ease: 'power3.inOut', duration: 0.22 }, 0.78);
+    // Phase 4 (0.78–1.0): Everything resets
+    master.to(skyline, { scale: 1, opacity: 1, ease: 'power3.inOut', duration: 0.22 }, 0.78);
+    master.to(heroContent, { opacity: 0, y: 20, ease: 'power2.in', duration: 0.12 }, 0.78);
+    master.to(heroStats, { opacity: 0, y: 20, ease: 'power2.in', duration: 0.12 }, 0.78);
     master.to(titleTop, {
       x: 0, opacity: 1, letterSpacing: '-0.04em',
       ease: 'power2.inOut', duration: 0.22,
@@ -535,28 +551,35 @@ const structuredData = {
   font-weight: 300;
 }
 
-/* Center card */
-.hero-card {
-  position: relative;
-  z-index: 3;
-  width: min(88vw, 680px);
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 20px 80px rgba(13,27,42,0.1), 0 1px 3px rgba(13,27,42,0.04);
-  will-change: transform;
-}
-.hero-card-inner {
-  padding: 48px 48px 40px;
-  position: relative;
+/* Skyline — the center visual that scales */
+.hero-skyline-wrap {
+  width: min(70vw, 800px);
   z-index: 1;
+  will-change: transform, opacity;
+  pointer-events: none;
 }
-.hero-card-tag {
+.skyline-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Content overlay — appears during immersive phase */
+.hero-content-overlay {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 40px;
+  will-change: opacity, transform;
+}
+.hero-content-overlay .hero-tag {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -568,86 +591,52 @@ const structuredData = {
   width: 24px; height: 1px;
   background: var(--slate-2);
 }
-.hero-card-headline {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(28px, 3.5vw, 42px);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--navy);
-  margin-bottom: 16px;
-}
-.hero-card-sub {
-  font-size: 15px;
+.hero-content-overlay .hero-sub {
+  max-width: 520px;
+  font-size: 17px;
   color: var(--text-2);
-  line-height: 1.7;
-  max-width: 440px;
-  margin-bottom: 32px;
+  line-height: 1.8;
+  margin-bottom: 36px;
+  font-weight: 300;
 }
-.hero-card-stats {
+.hero-content-overlay .hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Stats bar — appears during immersive phase */
+.hero-stats {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  border-top: 1px solid var(--border);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  overflow: hidden;
-  margin-bottom: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 64px;
+  will-change: opacity, transform;
 }
-.hc-stat {
-  background: var(--bg);
-  padding: 20px 16px;
-  text-align: center;
+.h-stat {
+  padding: 28px 0;
+  border-right: 1px solid var(--border);
+  padding-right: 48px;
 }
-.hc-stat-val {
+.h-stat:nth-child(2) { padding-left: 48px; }
+.h-stat:last-child { border-right: none; padding-left: 48px; padding-right: 0; }
+.h-stat-val {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 400;
   color: var(--navy);
   line-height: 1;
   margin-bottom: 4px;
 }
-.hc-stat-val em {
-  font-style: italic;
-  color: var(--blue);
-  font-size: 18px;
-}
-.hc-stat-label {
-  font-size: 11px;
-  color: var(--muted);
-}
-.hero-card-cta {
-  display: inline-block;
-  background: var(--navy);
-  color: var(--white);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 14px 32px;
-  text-decoration: none;
-  transition: background 0.3s, transform 0.3s;
-}
-.hero-card-cta:hover {
-  background: var(--blue);
-  transform: translateY(-2px);
-}
-
-/* Skyline inside card */
-.hero-card-skyline {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0.06;
-  pointer-events: none;
-  z-index: 0;
-}
-.hero-card-skyline svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+.h-stat-val em { font-style: italic; color: var(--blue); font-size: 24px; }
+.h-stat-label { font-size: 13px; color: var(--muted); line-height: 1.4; }
 
 /* Scroll hint */
 .hero-scroll-hint {
@@ -655,7 +644,7 @@ const structuredData = {
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 5;
 }
 .hero-scroll-line {
   width: 1px;
@@ -1180,8 +1169,6 @@ a.s-card-link:hover .s-card-cta { gap: 14px; color: var(--navy); }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
-  .hero-card-inner { padding: 36px 32px 32px; }
-  .hero-card-headline { font-size: 28px; }
   .cta-sec { padding: 96px 40px; }
 
   .process-layout { grid-template-columns: 1fr; gap: 48px; }
@@ -1196,16 +1183,15 @@ a.s-card-link:hover .s-card-cta { gap: 14px; color: var(--navy); }
   /* Hero */
   .hero-scroll { height: 320vh; }
   .hero-title { font-size: 36px; }
-  .hero-card { width: 92vw; border-radius: 8px; }
-  .hero-card-inner { padding: 28px 24px 24px; }
-  .hero-card-headline { font-size: 24px; }
-  .hero-card-sub { font-size: 13px; margin-bottom: 20px; }
-  .hero-card-stats { margin-bottom: 20px; }
-  .hc-stat { padding: 14px 10px; }
-  .hc-stat-val { font-size: 24px; }
-  .hc-stat-val em { font-size: 14px; }
-  .hc-stat-label { font-size: 10px; }
-  .hero-card-cta { padding: 12px 24px; font-size: 11px; }
+  .hero-skyline-wrap { width: 90vw; }
+  .hero-content-overlay { padding: 0 20px; }
+  .hero-content-overlay .hero-sub { font-size: 15px; }
+  .hero-content-overlay .hero-actions { flex-direction: column; gap: 12px; }
+  .hero-stats { padding: 0 20px; grid-template-columns: 1fr 1fr; }
+  .h-stat { padding: 16px 0; }
+  .h-stat:nth-child(2) { padding-left: 20px; border-right: none; }
+  .h-stat:last-child { display: none; }
+  .h-stat-val { font-size: 28px; }
 
   /* Sections */
   .sec-intro { font-size: 14px; margin-bottom: 40px; }
